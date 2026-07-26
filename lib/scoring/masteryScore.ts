@@ -108,8 +108,14 @@ export function predictFinishDate(
   roadmap: Roadmap,
   startDate: string,
 ): string {
-  const totalNodes = roadmap.phases.flatMap(p => p.weeks.flatMap(w => w.nodes)).length;
-  const completedNodes = Object.values(progress.nodes).filter(n => n.status === 'completed').length;
+  // Build a set of this roadmap's own node IDs so velocity is isolated per-roadmap
+  const roadmapNodeIds = new Set(
+    roadmap.phases.flatMap(p => p.weeks.flatMap(w => w.nodes.map(n => n.id)))
+  );
+  const totalNodes = roadmapNodeIds.size;
+  const completedNodes = [...roadmapNodeIds].filter(
+    id => progress.nodes[id]?.status === 'completed'
+  ).length;
   const remainingNodes = totalNodes - completedNodes;
 
   const daysSinceStart = Math.max(

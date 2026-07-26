@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { verifySession } from '@/lib/auth';
-import { getUserRetrospectives, getUserProgress, getAllRoadmaps, getUserProfile, getUserSessions } from '@/lib/storage/readJson';
+import { getUserRetrospectives, getUserProgress, getAllRoadmaps, getUserProfile, getUserSessions, type Roadmap, type UserProgress } from '@/lib/storage/readJson';
 import { writeUserJson } from '@/lib/storage/writeJson';
 import { roadmapCompletion, predictFinishDate } from '@/lib/scoring/masteryScore';
 import { z } from 'zod';
@@ -15,6 +15,27 @@ const retroSchema = z.object({
     nextWeekFocus: z.string().max(2000).optional().default(''),
   }),
 });
+
+// Shared helper — computes the track with the lowest completion ratio
+function computeWeakestTrack(roadmaps: Roadmap[], progress: UserProgress): string {
+  const trackCompletion: Record<string, { done: number; total: number }> = {};
+  for (const roadmap of roadmaps) {
+    for (const phase of roadmap.phases) {
+      for (const week of phase.weeks) {
+        for (const node of week.nodes) {
+          if (!trackCompletion[node.track]) trackCompletion[node.track] = { done: 0, total: 0 };
+          trackCompletion[node.track].total++;
+          if (progress.nodes[node.id]?.status === 'completed') trackCompletion[node.track].done++;
+        }
+      }
+    }
+  }
+  return (
+    Object.entries(trackCompletion).sort(
+      ([, a], [, b]) => a.done / Math.max(a.total, 1) - b.done / Math.max(b.total, 1)
+    )[0]?.[0] ?? 'General'
+  );
+}
 
 export async function GET() {
   const session = await verifySession();
@@ -32,22 +53,7 @@ export async function GET() {
   const weekNodes = weekSessions.flatMap(s => s.nodeIds);
   const hoursStudied = weekSessions.reduce((s, sess) => s + sess.durationMinutes / 60, 0);
 
-  // Weakest track: track with lowest completion%
-  const trackCompletion: Record<string, { done: number; total: number }> = {};
-  for (const roadmap of roadmaps) {
-    for (const phase of roadmap.phases) {
-      for (const week of phase.weeks) {
-        for (const node of week.nodes) {
-          if (!trackCompletion[node.track]) trackCompletion[node.track] = { done: 0, total: 0 };
-          trackCompletion[node.track].total++;
-          if (progress.nodes[node.id]?.status === 'completed') trackCompletion[node.track].done++;
-        }
-      }
-    }
-  }
-  const weakestTrack = Object.entries(trackCompletion).sort(([, a], [, b]) =>
-    (a.done / Math.max(a.total, 1)) - (b.done / Math.max(b.total, 1))
-  )[0]?.[0] || 'General';
+  const weakestTrack = computeWeakestTrack(roadmaps, progress);
 
   // Pace status for 6-month roadmap
   const sixMonthRoadmap = roadmaps.find(r => r.id === '6month-mastery');
@@ -104,10 +110,12 @@ export async function POST(req: Request) {
       nodesCompleted: weekSessions.flatMap(s => s.nodeIds).length,
       hoursStudied: Math.round(hoursStudied * 10) / 10,
       streakMaintained: progress.streak.current > 0,
-      weakestTrack: 'DSA', // simplified here, full calc done in GET
+      weakestTrack: computeWeakestTrack(roadmaps, progress),
       paceStatus,
       predictedFinish6Month: sixMonthRoadmap ? predictFinishDate(progress, sixMonthRoadmap, startDate) : '',
-      predictedFinishWebDev: '',
+      predictedFinishWebDev: roadmaps.find(r => r.id === 'webdev-8week')
+        ? predictFinishDate(progress, roadmaps.find(r => r.id === 'webdev-8week')!, profile.roadmapStartDates?.['webdev-8week'] || startDate)
+        : '',
     },
     createdAt: new Date().toISOString(),
   };

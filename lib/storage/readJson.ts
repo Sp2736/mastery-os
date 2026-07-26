@@ -299,8 +299,7 @@ export interface UserResources {
 
 export function getUserResources(userId: string): UserResources {
   validateUserId(userId);
-  const data = fs.readFileSync(path.join(DATA_DIR, 'users', userId, 'resources.json'), 'utf-8');
-  return JSON.parse(data) as UserResources;
+  return readJsonFile<UserResources>(`users/${userId}/resources.json`);
 }
 
 export interface LeetCodeProblem {
@@ -324,6 +323,5 @@ export interface UserLeetCode {
 
 export function getUserLeetCode(userId: string): UserLeetCode {
   validateUserId(userId);
-  const data = fs.readFileSync(path.join(DATA_DIR, 'users', userId, 'leetcode.json'), 'utf-8');
-  return JSON.parse(data) as UserLeetCode;
+  return readJsonFile<UserLeetCode>(`users/${userId}/leetcode.json`);
 }

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { verifySession } from '@/lib/auth';
-import { getUserLeetCode } from '@/lib/storage/readJson';
+import { getUserLeetCode, getUserProgress, getUserSettings, levelFromXP } from '@/lib/storage/readJson';
 import { writeUserJson } from '@/lib/storage/writeJson';
 import { z } from 'zod';
 
@@ -42,15 +42,12 @@ export async function PATCH(req: Request) {
   await writeUserJson(session.userId, 'leetcode.json', leetcode);
 
   if (completed && !wasCompleted) {
-    const { getUserProgress, getUserSettings } = await import('@/lib/storage/readJson');
     const progress = getUserProgress(session.userId);
     const settings = getUserSettings(session.userId);
     
     // Defaulting to medium multiplier for leetcode
     const xpAwarded = Math.floor(settings.baseXP * (settings.xpMultipliers.medium || 1));
     progress.xp.total += xpAwarded;
-    
-    const { levelFromXP } = await import('@/lib/storage/readJson');
     progress.xp.level = levelFromXP(progress.xp.total);
 
     // Update streak

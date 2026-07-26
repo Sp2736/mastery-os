@@ -3,6 +3,7 @@ import { verifySession } from '@/lib/auth';
 import {
   getUserProgress, getUserProfile, getAllRoadmaps,
   getUserAchievements, getAchievementDefinitions, getUserSessions,
+  getUserSettings, levelFromXP,
 } from '@/lib/storage/readJson';
 import { computeMasteryScore, roadmapCompletion, predictFinishDate } from '@/lib/scoring/masteryScore';
 import { writeUserJson } from '@/lib/storage/writeJson';
@@ -79,7 +80,7 @@ export async function PATCH(req: Request) {
   const progress = getUserProgress(userId);
   const profile = getUserProfile(userId);
   const roadmaps = getAllRoadmaps();
-  const settings = (await import('@/lib/storage/readJson')).getUserSettings(userId);
+  const settings = getUserSettings(userId);
 
   // Find node to compute XP
   let xpAwarded = 0;
@@ -114,7 +115,6 @@ export async function PATCH(req: Request) {
   // Update XP + level
   if (xpDelta > 0) {
     progress.xp.total += xpDelta;
-    const { levelFromXP } = await import('@/lib/storage/readJson');
     progress.xp.level = levelFromXP(progress.xp.total);
   }
 
