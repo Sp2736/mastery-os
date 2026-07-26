@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  --color-background: #08090c;
+  --color-panel: #101319;
+  
+  --radius-panel: 20px;
+  --radius-card: 14px;
+  --radius-control: 10px;
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
+    --background: #08090c;
     --foreground: #ededed;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply font-sans;
+  }
+
+  /* Support for reduced motion per guidelines */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass-panel {
+    @apply bg-[#101319]/50 backdrop-blur-xl border border-white/5 rounded-[20px] shadow-[0_0_20px_rgba(0,0,0,0.5)];
+  }
+  .glass-card {
+    @apply bg-[#101319]/80 backdrop-blur-md border border-white/5 rounded-[14px] shadow-[0_0_15px_rgba(0,0,0,0.4)];
+  }
 }

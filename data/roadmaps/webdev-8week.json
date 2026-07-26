@@ -1,0 +1,874 @@
+{
+  "id": "webdev-8week",
+  "title": "8-Week Web Dev Roadmap",
+  "description": "Next.js + NestJS fundamentals — manual coding, no AI — 56 days",
+  "sourceFile": "web-dev-roadmap.md",
+  "parsedAt": "2026-07-26T08:26:42.773Z",
+  "durationWeeks": 8,
+  "color": "#6366f1",
+  "phases": [
+    {
+      "id": "phase-1",
+      "title": "Phase 1: Frontend Foundations (Weeks 1–4)",
+      "weeks": [
+        {
+          "id": "week-1",
+          "title": "Week 1 — JS Fundamentals",
+          "tracks": [
+            "JS Fundamentals"
+          ],
+          "nodes": [
+            {
+              "id": "node-b011561371",
+              "title": "Day 1: Array methods — write map, filter, reduce from scratch",
+              "track": "JS Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 1
+            },
+            {
+              "id": "node-034f5900d9",
+              "title": "Day 2: Destructuring + spread/rest — rewrite 5 functions",
+              "track": "JS Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-b011561371"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 2
+            },
+            {
+              "id": "node-d988de0a88",
+              "title": "Day 3: Promises vs async/await — 3 different fetch approaches",
+              "track": "JS Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-034f5900d9"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 3
+            },
+            {
+              "id": "node-cad8df6554",
+              "title": "Day 4: Closures — counter factory function + explanation",
+              "track": "JS Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-d988de0a88"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 4
+            },
+            {
+              "id": "node-08d8ccaa6b",
+              "title": "Day 5: this, arrow functions vs regular functions — 3 examples",
+              "track": "JS Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-cad8df6554"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 5
+            },
+            {
+              "id": "node-c061dae9f5",
+              "title": "Day 6: Review — redo Day 1 and Day 3 from memory",
+              "track": "JS Fundamentals",
+              "type": "checkpoint",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-08d8ccaa6b"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 6
+            },
+            {
+              "id": "node-b5b92a9a4c",
+              "title": "Day 7: Rest / light review of anything shaky",
+              "track": "JS Fundamentals",
+              "type": "checkpoint",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [
+                "node-c061dae9f5"
+              ],
+              "resources": [],
+              "checkpoint": true,
+              "dayNumber": 7
+            }
+          ]
+        },
+        {
+          "id": "week-2",
+          "title": "Week 2 — React Core",
+          "tracks": [
+            "React Core"
+          ],
+          "nodes": [
+            {
+              "id": "node-29a4a27256",
+              "title": "Day 8: useState — build a counter + toggle component from blank",
+              "track": "React Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 8
+            },
+            {
+              "id": "node-e4ede7a928",
+              "title": "Day 9: useEffect — fetch data on mount, handle loading/error",
+              "track": "React Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-29a4a27256"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 9
+            },
+            {
+              "id": "node-ac3a5bc7a4",
+              "title": "Day 10: Props vs state — parent passing data + callback to child",
+              "track": "React Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-e4ede7a928"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 10
+            },
+            {
+              "id": "node-31ab5af689",
+              "title": "Day 11: Lists and keys — todo list (add/remove) from scratch",
+              "track": "React Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-ac3a5bc7a4"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 11
+            },
+            {
+              "id": "node-16fa781ca0",
+              "title": "Day 12: Forms — controlled form with 3 inputs + submit validation",
+              "track": "React Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-31ab5af689"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 12
+            },
+            {
+              "id": "node-c53ade3477",
+              "title": "Day 13: Component composition — refactor todo into 3 components",
+              "track": "React Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-16fa781ca0"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 13
+            },
+            {
+              "id": "node-f76a889263",
+              "title": "Day 14: Rebuild the todo list entirely from memory, timed",
+              "track": "React Core",
+              "type": "checkpoint",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [
+                "node-c53ade3477"
+              ],
+              "resources": [],
+              "checkpoint": true,
+              "dayNumber": 14
+            }
+          ]
+        },
+        {
+          "id": "week-3",
+          "title": "Week 3 — Next.js Fundamentals",
+          "tracks": [
+            "Next.js Fundamentals"
+          ],
+          "nodes": [
+            {
+              "id": "node-c253ffe51b",
+              "title": "Day 15: File-based routing — create about and blog pages manually",
+              "track": "Next.js Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 15
+            },
+            {
+              "id": "node-7d75c8f4eb",
+              "title": "Day 16: Dynamic routes — build blog/[slug]/page.tsx, log param",
+              "track": "Next.js Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-c253ffe51b"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 16
+            },
+            {
+              "id": "node-307d894469",
+              "title": "Day 17: Layouts — shared layout.tsx with nav across routes",
+              "track": "Next.js Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-7d75c8f4eb"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 17
+            },
+            {
+              "id": "node-3e5755e8aa",
+              "title": "Day 18: Server vs Client Components — write one of each, explain why",
+              "track": "Next.js Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-307d894469"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 18
+            },
+            {
+              "id": "node-6cc1bb55d7",
+              "title": "Day 19: Data fetching in Server Components — fetch public API",
+              "track": "Next.js Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-3e5755e8aa"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 19
+            },
+            {
+              "id": "node-a51e562c20",
+              "title": "Day 20: Loading and error states — add loading.tsx and error.tsx",
+              "track": "Next.js Fundamentals",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-6cc1bb55d7"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 20
+            },
+            {
+              "id": "node-235fb16f31",
+              "title": "Day 21: Review — rebuild Day 16 + Day 19 from a blank folder",
+              "track": "Next.js Fundamentals",
+              "type": "checkpoint",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [
+                "node-a51e562c20"
+              ],
+              "resources": [],
+              "checkpoint": true,
+              "dayNumber": 21
+            }
+          ]
+        },
+        {
+          "id": "week-4",
+          "title": "Week 4 — Next.js Data & Routes",
+          "tracks": [
+            "Next.js Data & Routes"
+          ],
+          "nodes": [
+            {
+              "id": "node-3c24225a62",
+              "title": "Day 22: Route handlers — GET handler returning mock data",
+              "track": "Next.js Data & Routes",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 22
+            },
+            {
+              "id": "node-a66a6d5ae5",
+              "title": "Day 23: POST handler — accept body, validate it, return response",
+              "track": "Next.js Data & Routes",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-3c24225a62"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 23
+            },
+            {
+              "id": "node-54060b8b69",
+              "title": "Day 24: Dynamic API routes — GET/DELETE for individual resource",
+              "track": "Next.js Data & Routes",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-a66a6d5ae5"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 24
+            },
+            {
+              "id": "node-f0f5ebbbec",
+              "title": "Day 25: Connect page to your own API route in Server Component",
+              "track": "Next.js Data & Routes",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-54060b8b69"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 25
+            },
+            {
+              "id": "node-6213c98c83",
+              "title": "Day 26: Client-side interactivity — delete button calling DELETE route",
+              "track": "Next.js Data & Routes",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-f0f5ebbbec"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 26
+            },
+            {
+              "id": "node-192e2dcd5a",
+              "title": "Day 27: Environment variables + .env.local in route handler",
+              "track": "Next.js Data & Routes",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-6213c98c83"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 27
+            },
+            {
+              "id": "node-1390a28b76",
+              "title": "Day 28: Build tiny notes app end-to-end from scratch",
+              "track": "Next.js Data & Routes",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "hard",
+              "dependencies": [
+                "node-192e2dcd5a"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "title": "Phase 2: Backend + Integration (Weeks 5–8)",
+      "weeks": [
+        {
+          "id": "week-5",
+          "title": "Week 5 — NestJS Core",
+          "tracks": [
+            "NestJS Core"
+          ],
+          "nodes": [
+            {
+              "id": "node-94e99c94a5",
+              "title": "Day 29: Install Nest CLI, trace main.ts → AppModule by hand",
+              "track": "NestJS Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 29
+            },
+            {
+              "id": "node-600db94097",
+              "title": "Day 30: Modules — create NotesModule manually (no CLI generator)",
+              "track": "NestJS Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-94e99c94a5"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 30
+            },
+            {
+              "id": "node-490d310a96",
+              "title": "Day 31: Controllers — write NotesController with GET endpoint",
+              "track": "NestJS Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-600db94097"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 31
+            },
+            {
+              "id": "node-8c361da457",
+              "title": "Day 32: Providers/Services — NotesService, inject into controller",
+              "track": "NestJS Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-490d310a96"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 32
+            },
+            {
+              "id": "node-5e54fcda64",
+              "title": "Day 33: Explain Dependency Injection out loud / in writing",
+              "track": "NestJS Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-8c361da457"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 33
+            },
+            {
+              "id": "node-2704da16f1",
+              "title": "Day 34: POST endpoint — add create method to service + controller",
+              "track": "NestJS Core",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-5e54fcda64"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 34
+            },
+            {
+              "id": "node-86d0ac4f84",
+              "title": "Day 35: Review — rebuild Notes module from blank files",
+              "track": "NestJS Core",
+              "type": "checkpoint",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [
+                "node-2704da16f1"
+              ],
+              "resources": [],
+              "checkpoint": true,
+              "dayNumber": 35
+            }
+          ]
+        },
+        {
+          "id": "week-6",
+          "title": "Week 6 — NestJS + Database",
+          "tracks": [
+            "NestJS Advanced"
+          ],
+          "nodes": [
+            {
+              "id": "node-f695b8d339",
+              "title": "Day 36: DTOs — CreateNoteDto with class-validator decorators",
+              "track": "NestJS Advanced",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 36
+            },
+            {
+              "id": "node-40c21555db",
+              "title": "Day 37: Enable validation pipe globally, test bad input rejection",
+              "track": "NestJS Advanced",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-f695b8d339"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 37
+            },
+            {
+              "id": "node-d1162ac71a",
+              "title": "Day 38: Learn Prisma (or TypeORM) — Note model, run migration",
+              "track": "NestJS Advanced",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-40c21555db"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 38
+            },
+            {
+              "id": "node-d199c89091",
+              "title": "Day 39: Wire NotesService to DB for GET (read all)",
+              "track": "NestJS Advanced",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-d1162ac71a"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 39
+            },
+            {
+              "id": "node-aed144e748",
+              "title": "Day 40: Wire POST (create) to the database",
+              "track": "NestJS Advanced",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-d199c89091"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 40
+            },
+            {
+              "id": "node-db1a2df62e",
+              "title": "Day 41: Add PATCH and DELETE endpoints backed by DB",
+              "track": "NestJS Advanced",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-aed144e748"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 41
+            },
+            {
+              "id": "node-189f57f49a",
+              "title": "Day 42: Rebuild full CRUD resource from scratch, timed",
+              "track": "NestJS Advanced",
+              "type": "checkpoint",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [
+                "node-db1a2df62e"
+              ],
+              "resources": [],
+              "checkpoint": true,
+              "dayNumber": 42
+            }
+          ]
+        },
+        {
+          "id": "week-7",
+          "title": "Week 7 — Integration",
+          "tracks": [
+            "Integration"
+          ],
+          "nodes": [
+            {
+              "id": "node-e1fa4c173f",
+              "title": "Day 43: Point Next.js fetch calls at NestJS API (CORS setup)",
+              "track": "Integration",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 43
+            },
+            {
+              "id": "node-d04bd6a3c0",
+              "title": "Day 44: Basic auth — simple login endpoint in Nest (no JWT yet)",
+              "track": "Integration",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-e1fa4c173f"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 44
+            },
+            {
+              "id": "node-14d3f11e62",
+              "title": "Day 45: JWT — issue token on login, write auth service by hand",
+              "track": "Integration",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-d04bd6a3c0"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 45
+            },
+            {
+              "id": "node-316b577996",
+              "title": "Day 46: Protect route with auth guard — write the guard yourself",
+              "track": "Integration",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-14d3f11e62"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 46
+            },
+            {
+              "id": "node-9440f8bbf7",
+              "title": "Day 47: Frontend — store token, attach to authenticated requests",
+              "track": "Integration",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-316b577996"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 47
+            },
+            {
+              "id": "node-5247e25742",
+              "title": "Day 48: Protected page — redirect unauthenticated users",
+              "track": "Integration",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-9440f8bbf7"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 48
+            },
+            {
+              "id": "node-6645b11cd4",
+              "title": "Day 49: Review full auth flow end-to-end, explain without notes",
+              "track": "Integration",
+              "type": "checkpoint",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [
+                "node-5247e25742"
+              ],
+              "resources": [],
+              "checkpoint": true,
+              "dayNumber": 49
+            }
+          ]
+        },
+        {
+          "id": "week-8",
+          "title": "Week 8 — Solo Build",
+          "tracks": [
+            "Solo Build"
+          ],
+          "nodes": [
+            {
+              "id": "node-97d9989437",
+              "title": "Day 50: Plan full-stack app — routes, data model, pages on paper",
+              "track": "Solo Build",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 50
+            },
+            {
+              "id": "node-84ec90f58e",
+              "title": "Day 51: Build NestJS backend: module + controller + service skeleton",
+              "track": "Solo Build",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-97d9989437"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 51
+            },
+            {
+              "id": "node-e53c319d91",
+              "title": "Day 52: Backend: DB model + CRUD endpoints",
+              "track": "Solo Build",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-84ec90f58e"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 52
+            },
+            {
+              "id": "node-3954c06954",
+              "title": "Day 53: Backend: auth (login + protected routes)",
+              "track": "Solo Build",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "easy",
+              "dependencies": [
+                "node-e53c319d91"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 53
+            },
+            {
+              "id": "node-0471b30994",
+              "title": "Day 54: Frontend: pages + routing in Next.js",
+              "track": "Solo Build",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-3954c06954"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 54
+            },
+            {
+              "id": "node-766821cbaf",
+              "title": "Day 55: Frontend: connect to backend, forms, list views",
+              "track": "Solo Build",
+              "type": "task",
+              "estimatedMinutes": 35,
+              "difficulty": "medium",
+              "dependencies": [
+                "node-0471b30994"
+              ],
+              "resources": [],
+              "checkpoint": false,
+              "dayNumber": 55
+            },
+            {
+              "id": "node-97df1e4208",
+              "title": "Day 56: Polish, fix bugs, final self-check — could you rebuild?",
+              "track": "Solo Build",
+              "type": "checkpoint",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [
+                "node-766821cbaf"
+              ],
+              "resources": [],
+              "checkpoint": true,
+              "dayNumber": 56
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tracks": [
+    "JS Fundamentals",
+    "React Core",
+    "Next.js Fundamentals",
+    "Next.js Data & Routes",
+    "NestJS Core",
+    "NestJS Advanced",
+    "Integration",
+    "Solo Build"
+  ],
+  "totalNodes": 56
+}

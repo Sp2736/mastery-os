@@ -1,0 +1,20 @@
+{
+  "roadmaps": [
+    {
+      "id": "6month-mastery",
+      "title": "6-Month Mastery Roadmap",
+      "file": "6month-mastery.json",
+      "color": "#f59e0b",
+      "durationWeeks": 24,
+      "totalNodes": 192
+    },
+    {
+      "id": "webdev-8week",
+      "title": "8-Week Web Dev Roadmap",
+      "file": "webdev-8week.json",
+      "color": "#6366f1",
+      "durationWeeks": 8,
+      "totalNodes": 56
+    }
+  ]
+}

@@ -1,0 +1,2454 @@
+{
+  "id": "6month-mastery",
+  "title": "6-Month Mastery Roadmap",
+  "description": "DSA/CP mastery + Business, Finance & Critical Thinking — 24 weeks, 2 tracks in parallel",
+  "sourceFile": "Swayam_6Month_Mastery_Roadmap.md",
+  "parsedAt": "2026-07-26T08:26:42.772Z",
+  "durationWeeks": 24,
+  "color": "#f59e0b",
+  "phases": [
+    {
+      "id": "phase-0",
+      "title": "Phase 0: Language Mastery Foundations",
+      "weeks": [
+        {
+          "id": "week-1",
+          "title": "Week 1 — C++ STL Mastery",
+          "tracks": [
+            "DSA",
+            "Business"
+          ],
+          "nodes": [
+            {
+              "id": "node-c638ac93ba",
+              "title": "vector, pair, array, basic I/O speedups",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-dd8b89acfa",
+              "title": "set, multiset, unordered_set — ordering guarantees",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-2e1f141b92",
+              "title": "map, multimap, unordered_map — iteration, custom comparators",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-0597cf827f",
+              "title": "stack, queue, deque, priority_queue",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-14a889bb17",
+              "title": "Iterators, algorithm header — sort, lower_bound, upper_bound",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-2e4744b42f",
+              "title": "Write your own STL snippets cheat sheet",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-b98a9cd02e",
+              "title": "Pairs/tuples, emplace_back vs push_back, pass-by-reference",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-b0ae5234a1",
+              "title": "Business: Money Psychology & Personal Finance",
+              "track": "Business",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "The Psychology of Money"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-2",
+          "title": "Week 2 — Java Collections",
+          "tracks": [
+            "DSA",
+            "Business"
+          ],
+          "nodes": [
+            {
+              "id": "node-5823d83f44",
+              "title": "Collection hierarchy: List, Set, Map, Queue",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-33faa6c714",
+              "title": "ArrayList vs LinkedList, HashSet vs TreeSet",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-0d0aaa21f3",
+              "title": "HashMap vs TreeMap vs LinkedHashMap, custom equals/hashCode",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-c2d7e07bfd",
+              "title": "PriorityQueue, Deque/ArrayDeque, Collections utility",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-36720facfe",
+              "title": "Generics fundamentals: <T>, bounded types, wildcards",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-d12e71020f",
+              "title": "Comparable vs Comparator, lambda-based sorting",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-a6683a6876",
+              "title": "Build your Java STL-equivalent cheat sheet",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-a998fc10ce",
+              "title": "Business: Money Psychology & Personal Finance",
+              "track": "Business",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "The Psychology of Money"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-3",
+          "title": "Week 3 — Python DSA Idioms",
+          "tracks": [
+            "DSA",
+            "Business"
+          ],
+          "nodes": [
+            {
+              "id": "node-a6ca843574",
+              "title": "list, dict, set, tuple — comprehensions, Counter, defaultdict",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-7ce7bdc19a",
+              "title": "heapq (min-heap), bisect for binary search",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-a611c62e8a",
+              "title": "deque from collections, string manipulation idioms",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-9e555fa7e8",
+              "title": "itertools: permutations, combinations, product",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-07947af00e",
+              "title": "Big-O refresher across all 3 languages",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-ee82b66d63",
+              "title": "Contest #1: Codeforces Div 4",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-54fc5d22b2",
+              "title": "Checkpoint: solve same 5 problems in all 3 languages",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-c06ffa64b9",
+              "title": "Business: Money Psychology & Personal Finance",
+              "track": "Business",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "The Psychology of Money"
+              ],
+              "checkpoint": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-1",
+      "title": "Phase 1: DSA Patterns",
+      "weeks": [
+        {
+          "id": "week-4",
+          "title": "Week 4 — Arrays, Strings, Two Pointers, Sliding Window",
+          "tracks": [
+            "DSA",
+            "Business"
+          ],
+          "nodes": [
+            {
+              "id": "node-d47eda789b",
+              "title": "Fixed/variable sliding window patterns — 5 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-d44379dc6d",
+              "title": "Prefix sum + hashmap for subarray problems — 5 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-60d27b1fc9",
+              "title": "Two-pointer convergence technique — 5 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-09706a2357",
+              "title": "Arrays & Hashing NeetCode section — 5 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-68e12ebcb7",
+              "title": "Sliding Window NeetCode section — 5 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-3a85d25631",
+              "title": "Weekend CF contest — Div 3/4",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-7bf290a361",
+              "title": "Revisit 5 old problems cold (no notes)",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-4f6e7d25c1",
+              "title": "Business: Money Psychology & Personal Finance",
+              "track": "Business",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "The Psychology of Money"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-5",
+          "title": "Week 5 — Linked Lists, Stacks, Queues",
+          "tracks": [
+            "DSA",
+            "Business"
+          ],
+          "nodes": [
+            {
+              "id": "node-80b640eb0c",
+              "title": "Fast/slow pointers: cycle detection, middle-finding",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-387336f975",
+              "title": "In-place linked list reversal — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-fab5234600",
+              "title": "Monotonic stack: next greater element family — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-9a85e6944d",
+              "title": "Stack-based problems — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-a08cb1ff96",
+              "title": "Queue simulation problems — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-78c0012a3d",
+              "title": "Weekend CF contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-d4ba8fd005",
+              "title": "Review: Laaksonen Ch 1–2",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-93b7a7e362",
+              "title": "Business: How Businesses Actually Work",
+              "track": "Business",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "The Personal MBA"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-6",
+          "title": "Week 6 — Binary Search + Trees",
+          "tracks": [
+            "DSA",
+            "Business"
+          ],
+          "nodes": [
+            {
+              "id": "node-40c0170e39",
+              "title": "Binary search on sorted arrays — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-30a9a4ae2b",
+              "title": "Binary search on answer space — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-b2515cf27a",
+              "title": "Tree traversals: recursive + iterative — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-7fc2956ae2",
+              "title": "BST properties and operations — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-90b20723cb",
+              "title": "Tree BFS/DFS — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-ec268ef961",
+              "title": "Weekend CF contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-bfbc655a11",
+              "title": "Review session: binary search edge cases",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-c0ba45e7d5",
+              "title": "Business: How Businesses Actually Work",
+              "track": "Business",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "The Personal MBA"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-7",
+          "title": "Week 7 — Graphs Part 1",
+          "tracks": [
+            "DSA",
+            "Business"
+          ],
+          "nodes": [
+            {
+              "id": "node-19f3e71015",
+              "title": "BFS on graphs — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-863eb0d99f",
+              "title": "DFS on graphs — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-135ec34d72",
+              "title": "Connected components — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-975fa413d1",
+              "title": "Grid-as-graph problems — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-97422c070d",
+              "title": "Cycle detection — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-b4f9eb81e7",
+              "title": "Weekend CF contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-42f137f11d",
+              "title": "Review: graph representation choices",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-4211c20b76",
+              "title": "Business: How Businesses Actually Work",
+              "track": "Business",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "The Personal MBA"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-8",
+          "title": "Week 8 — Graphs Part 2",
+          "tracks": [
+            "DSA",
+            "Business"
+          ],
+          "nodes": [
+            {
+              "id": "node-3e2b213cc2",
+              "title": "Topological sort: Kahn's algorithm — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-05e1934691",
+              "title": "DFS-based topological sort — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-e9ee0f1177",
+              "title": "Union-Find/DSU — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-35c2887469",
+              "title": "Dijkstra's shortest path — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-ac2c5ab6c0",
+              "title": "Minimum spanning tree: Kruskal/Prim — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-842e35e204",
+              "title": "Weekend CF contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-30ea840de0",
+              "title": "Review: Laaksonen Ch 12–15",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-6446f29649",
+              "title": "Business: How Businesses Actually Work",
+              "track": "Business",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "The Personal MBA"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-9",
+          "title": "Week 9 — Heaps, Greedy, Intervals",
+          "tracks": [
+            "DSA",
+            "Finance"
+          ],
+          "nodes": [
+            {
+              "id": "node-1835a592b9",
+              "title": "Top-K problems with heaps — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-c8110f0f80",
+              "title": "Merge intervals pattern — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-afb099b2cf",
+              "title": "Greedy proof-of-correctness exercises — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-2c03284dd9",
+              "title": "Task scheduling problems — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-0efb8578d0",
+              "title": "Meeting rooms / interval overlap — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-5d7e72cf15",
+              "title": "Weekend CF contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-7d17e356c9",
+              "title": "Review: greedy vs DP decision criteria",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-b059bb3e06",
+              "title": "Finance: Markets, Investing & the Workflow of Money",
+              "track": "Finance",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Rich Dad Poor Dad"
+              ],
+              "checkpoint": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "title": "Phase 2: Dynamic Programming",
+      "weeks": [
+        {
+          "id": "week-10",
+          "title": "Week 10 — 1D DP",
+          "tracks": [
+            "DSA",
+            "Finance"
+          ],
+          "nodes": [
+            {
+              "id": "node-b164eb728a",
+              "title": "Climbing stairs, house robber patterns — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-fae516a852",
+              "title": "Coin change variations — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-6b34261a85",
+              "title": "LIS: O(n²) solution — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-6ad4e45037",
+              "title": "LIS: O(n log n) solution — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-3f16f07d6f",
+              "title": "DP recurrence relation writing practice",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-76a7398905",
+              "title": "Memoization → tabulation conversion exercise",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-9a8ecb6e07",
+              "title": "Review: state definition discipline",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-c6e83c24aa",
+              "title": "Finance: Markets, Investing & the Workflow of Money",
+              "track": "Finance",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Rich Dad Poor Dad"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-11",
+          "title": "Week 11 — 2D DP",
+          "tracks": [
+            "DSA",
+            "Finance"
+          ],
+          "nodes": [
+            {
+              "id": "node-9ba5259367",
+              "title": "Unique paths grid DP — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-cddf474839",
+              "title": "0/1 Knapsack — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-2f28ab9e39",
+              "title": "Unbounded knapsack — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-e9bebac548",
+              "title": "Grid with obstacles DP — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-5d47354bef",
+              "title": "Target sum DP — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-2ccc56d213",
+              "title": "Weekend contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-9e7029df27",
+              "title": "Review: 2D state visualization",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-ff3c16a2bf",
+              "title": "Finance: Markets, Investing & the Workflow of Money",
+              "track": "Finance",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Rich Dad Poor Dad"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-12",
+          "title": "Week 12 — String DP",
+          "tracks": [
+            "DSA",
+            "Finance"
+          ],
+          "nodes": [
+            {
+              "id": "node-f9c89d4872",
+              "title": "Longest Common Subsequence — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-51d48bf512",
+              "title": "Edit Distance — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-77de3f72f8",
+              "title": "Palindrome partitioning — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-ecdec915a7",
+              "title": "Wildcard matching — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-3137780969",
+              "title": "Regex matching — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-9830a50397",
+              "title": "Weekend contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-e521df5756",
+              "title": "Review: string DP patterns",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-899d2403aa",
+              "title": "Finance: Markets, Investing & the Workflow of Money",
+              "track": "Finance",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Rich Dad Poor Dad"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-13",
+          "title": "Week 13 — DP on Trees + Review",
+          "tracks": [
+            "DSA",
+            "Entrepreneurship"
+          ],
+          "nodes": [
+            {
+              "id": "node-ee223c163b",
+              "title": "DP on trees: diameter, longest path — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-e8595fb5cb",
+              "title": "Interval DP: matrix chain multiplication style — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-5d290fa884",
+              "title": "Review week: redo hardest problems from Weeks 10–12",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-aa56a6f990",
+              "title": "Mixed DP problem set — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-c4525be92d",
+              "title": "DP contest: Codeforces DP problemset",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-49acc3dc29",
+              "title": "Weekend contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-2413d7cfc4",
+              "title": "Phase 2 checkpoint: full mock",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-4f4d51878f",
+              "title": "Entrepreneurship: Entrepreneurship & Building Things That Matter",
+              "track": "Entrepreneurship",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Zero to One"
+              ],
+              "checkpoint": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "title": "Phase 3: Advanced Topics",
+      "weeks": [
+        {
+          "id": "week-14",
+          "title": "Week 14 — Backtracking",
+          "tracks": [
+            "DSA",
+            "Entrepreneurship"
+          ],
+          "nodes": [
+            {
+              "id": "node-dbdd1a457f",
+              "title": "Subsets generation — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-ddace1e9f3",
+              "title": "Permutations — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-47998cfce2",
+              "title": "N-Queens — 1 problem",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-e86f13a7c0",
+              "title": "Sudoku-style constraint problems — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-b64af0b9a9",
+              "title": "Word search / letter combinations — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-215ada1224",
+              "title": "Weekend contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-a27b9fbe2c",
+              "title": "Review: pruning strategies",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-a9a6ea43ca",
+              "title": "Entrepreneurship: Entrepreneurship & Building Things That Matter",
+              "track": "Entrepreneurship",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Zero to One"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-15",
+          "title": "Week 15 — Bit Manipulation",
+          "tracks": [
+            "DSA",
+            "Entrepreneurship"
+          ],
+          "nodes": [
+            {
+              "id": "node-a010263e46",
+              "title": "XOR tricks and properties — 4 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-30045fee0b",
+              "title": "Bitmasking for subset DP — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-059158422c",
+              "title": "popcount / bit counting tricks — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-2221c342a5",
+              "title": "Laaksonen Ch 10 exercises",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-e8846a8226",
+              "title": "Bit manipulation contest problems — 3 problems",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-93d9cb2c6d",
+              "title": "Weekend contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-8d515f038a",
+              "title": "Review: bitmask DP template",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-87b8c8c330",
+              "title": "Entrepreneurship: Entrepreneurship & Building Things That Matter",
+              "track": "Entrepreneurship",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Zero to One"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-16",
+          "title": "Week 16 — Number Theory",
+          "tracks": [
+            "DSA",
+            "Entrepreneurship"
+          ],
+          "nodes": [
+            {
+              "id": "node-9982ff1d31",
+              "title": "GCD/LCM implementations — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-e34b57acd1",
+              "title": "Sieve of Eratosthenes — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-1ed061d790",
+              "title": "Modular arithmetic problems — 3 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-02d2458b76",
+              "title": "Fast exponentiation — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-d6bcfa739e",
+              "title": "Laaksonen Ch 21–24 exercises",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-42431ef335",
+              "title": "Weekend contest",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-ce26fd4e77",
+              "title": "Review: modular inverse",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-bdaea8f5fb",
+              "title": "Entrepreneurship: Entrepreneurship & Building Things That Matter",
+              "track": "Entrepreneurship",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Zero to One"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-17",
+          "title": "Week 17 — Segment Trees / Fenwick",
+          "tracks": [
+            "DSA",
+            "Critical Thinking"
+          ],
+          "nodes": [
+            {
+              "id": "node-4bc0c23bcf",
+              "title": "Fenwick tree point update, range query — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-bb1716595c",
+              "title": "Segment tree range queries — 2 problems",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-8cb70e2adf",
+              "title": "Segment tree with lazy propagation — 1 problem",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-741ec4a347",
+              "title": "CP-Algorithms.com segment tree chapter",
+              "track": "DSA",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-fedfdf1e11",
+              "title": "Range query contest problems — 3 problems",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-e6ba49fc48",
+              "title": "Weekend contest: Div 2 attempt",
+              "track": "DSA",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-0e65620950",
+              "title": "Review: when to use BIT vs segment tree",
+              "track": "DSA",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-9d6ac36bf9",
+              "title": "Critical Thinking: Critical Thinking & Mental Models",
+              "track": "Critical Thinking",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Poor Charlie's Almanack"
+              ],
+              "checkpoint": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-4",
+      "title": "Phase 4: Volume & Mixed Practice",
+      "weeks": [
+        {
+          "id": "week-18",
+          "title": "Week 18 — Mixed Practice I",
+          "tracks": [
+            "CP",
+            "Critical Thinking"
+          ],
+          "nodes": [
+            {
+              "id": "node-6510c3eaca",
+              "title": "Randomized mixed problem — day 1 (30-35 min timed)",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-d2f54830bf",
+              "title": "Randomized mixed problem — day 2",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-10a4e38189",
+              "title": "Randomized mixed problem — day 3",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-60aa1386ab",
+              "title": "Randomized mixed problem — day 4",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-f6a471881e",
+              "title": "Randomized mixed problem — day 5",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-c3c0aef715",
+              "title": "Full mock interview: narrate thought process",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-0302649f46",
+              "title": "Retro: identify weakest pattern category",
+              "track": "CP",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-48e60bc9d7",
+              "title": "Critical Thinking: Critical Thinking & Mental Models",
+              "track": "Critical Thinking",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Poor Charlie's Almanack"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-19",
+          "title": "Week 19 — Mixed Practice II",
+          "tracks": [
+            "CP",
+            "Critical Thinking"
+          ],
+          "nodes": [
+            {
+              "id": "node-e6d47a016c",
+              "title": "Timed problem day 1",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-d595ec6207",
+              "title": "Timed problem day 2",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-09b235d660",
+              "title": "Timed problem day 3",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-fe3ea3a518",
+              "title": "Timed problem day 4",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-bf98390a5f",
+              "title": "Timed problem day 5",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-eeb475756d",
+              "title": "Mock interview + Codeforces Div 2",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-aaeba47185",
+              "title": "Retro: velocity check",
+              "track": "CP",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-a1e9b8d756",
+              "title": "Critical Thinking: Critical Thinking & Mental Models",
+              "track": "Critical Thinking",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Poor Charlie's Almanack"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-20",
+          "title": "Week 20 — Timed Mocks I",
+          "tracks": [
+            "CP",
+            "Critical Thinking"
+          ],
+          "nodes": [
+            {
+              "id": "node-3fb3fcc79a",
+              "title": "Timed mock set 1",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-047dcb0e8e",
+              "title": "Timed mock set 2",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-7cdfe5fd9f",
+              "title": "Timed mock set 3",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-5deafa6a53",
+              "title": "Timed mock set 4",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-23733e4d1b",
+              "title": "Timed mock set 5",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-9dcab59220",
+              "title": "Full 2-hour mock contest (4 problems)",
+              "track": "CP",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-bc05163e07",
+              "title": "Review: narration quality analysis",
+              "track": "CP",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-808b991760",
+              "title": "Critical Thinking: Critical Thinking & Mental Models",
+              "track": "Critical Thinking",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "Poor Charlie's Almanack"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-21",
+          "title": "Week 21 — Timed Mocks II",
+          "tracks": [
+            "CP",
+            "General"
+          ],
+          "nodes": [
+            {
+              "id": "node-8a5bbe94c5",
+              "title": "Timed mock set 1",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-3aeae4128d",
+              "title": "Timed mock set 2",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-d145b2d899",
+              "title": "Timed mock set 3",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-22f6058808",
+              "title": "Timed mock set 4",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-17dc1c3666",
+              "title": "Timed mock set 5",
+              "track": "CP",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-c72a191b86",
+              "title": "Full 2-hour mock contest",
+              "track": "CP",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-213f93fe05",
+              "title": "Phase 4 retrospective",
+              "track": "CP",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-8cb62687eb",
+              "title": "General: Career Capital, Negotiation & Personal Branding",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "So Good They Can't Ignore You"
+              ],
+              "checkpoint": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-5",
+      "title": "Phase 5: Polish & System Design",
+      "weeks": [
+        {
+          "id": "week-22",
+          "title": "Week 22 — System Design Fundamentals",
+          "tracks": [
+            "General"
+          ],
+          "nodes": [
+            {
+              "id": "node-52e139713f",
+              "title": "Read: System Design Primer — Scalability section",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-4c80e3af77",
+              "title": "Read: System Design Primer — Load balancing",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-dc75bcafb1",
+              "title": "Read: System Design Primer — Databases & Caching",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-482afe6332",
+              "title": "Narrate SmartBI project using SD framework",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-ac22396d35",
+              "title": "Narrate FinIQ project using SD framework",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-95cd34cc39",
+              "title": "Practice: system design mock interview",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-127a6ff86b",
+              "title": "Review: tradeoffs vocabulary",
+              "track": "General",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-9c4b6ef8f0",
+              "title": "General: Career Capital, Negotiation & Personal Branding",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "So Good They Can't Ignore You"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-23",
+          "title": "Week 23 — Portfolio Integration",
+          "tracks": [
+            "General"
+          ],
+          "nodes": [
+            {
+              "id": "node-5044184613",
+              "title": "Add Codeforces profile to resume",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-80330edcb0",
+              "title": "Add LeetCode profile to resume",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-a5ad2438a4",
+              "title": "Write 3 project STAR stories",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-6de99c9caf",
+              "title": "Update GitHub portfolio README",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-5870aea700",
+              "title": "Draft elevator pitch (60 seconds)",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-1c9e18202c",
+              "title": "CF Div 2 contest",
+              "track": "General",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-9cc29d9cbb",
+              "title": "Review: personal brand statement",
+              "track": "General",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": true
+            },
+            {
+              "id": "node-679ff1881e",
+              "title": "General: Career Capital, Negotiation & Personal Branding",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "So Good They Can't Ignore You"
+              ],
+              "checkpoint": false
+            }
+          ]
+        },
+        {
+          "id": "week-24",
+          "title": "Week 24 — Final Mock + Review",
+          "tracks": [
+            "General"
+          ],
+          "nodes": [
+            {
+              "id": "node-349c5d54cc",
+              "title": "Full mock: 2 hours, 4 problems, no notes",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-1b7244e313",
+              "title": "Review all pattern templates",
+              "track": "General",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-56adf452af",
+              "title": "Final retrospective — 6-month synthesis",
+              "track": "General",
+              "type": "review",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-a05c3a6a5e",
+              "title": "Update resume with track B insights",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-4d3bb52028",
+              "title": "Write \"who I am and what I've built\" pitch",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "medium",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-5dfc2de1b7",
+              "title": "Final CF Div 2 contest",
+              "track": "General",
+              "type": "contest",
+              "estimatedMinutes": 120,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-63df192876",
+              "title": "Celebrate: 6-month checkpoint",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 45,
+              "difficulty": "hard",
+              "dependencies": [],
+              "resources": [],
+              "checkpoint": false
+            },
+            {
+              "id": "node-673413b2e2",
+              "title": "General: Career Capital, Negotiation & Personal Branding",
+              "track": "General",
+              "type": "task",
+              "estimatedMinutes": 30,
+              "difficulty": "easy",
+              "dependencies": [],
+              "resources": [
+                "So Good They Can't Ignore You"
+              ],
+              "checkpoint": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tracks": [
+    "DSA",
+    "Business",
+    "Finance",
+    "Entrepreneurship",
+    "Critical Thinking",
+    "CP",
+    "General"
+  ],
+  "totalNodes": 192
+}

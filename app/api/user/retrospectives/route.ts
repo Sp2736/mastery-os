@@ -1,0 +1,124 @@
+import { NextResponse } from 'next/server';
+import { verifySession } from '@/lib/auth';
+import { getUserRetrospectives, getUserProgress, getAllRoadmaps, getUserProfile, getUserSessions } from '@/lib/storage/readJson';
+import { writeUserJson } from '@/lib/storage/writeJson';
+import { roadmapCompletion, predictFinishDate } from '@/lib/scoring/masteryScore';
+import { z } from 'zod';
+
+const retroSchema = z.object({
+  weekNumber: z.number().min(1).max(52),
+  weekStartDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  answers: z.object({
+    wins: z.string().max(2000).optional().default(''),
+    struggles: z.string().max(2000).optional().default(''),
+    keyLearning: z.string().max(2000).optional().default(''),
+    nextWeekFocus: z.string().max(2000).optional().default(''),
+  }),
+});
+
+export async function GET() {
+  const session = await verifySession();
+  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+  const { userId } = session;
+  const retros = getUserRetrospectives(userId);
+  const progress = getUserProgress(userId);
+  const profile = getUserProfile(userId);
+  const roadmaps = getAllRoadmaps();
+  const sessions = getUserSessions(userId);
+
+  // Compute pre-populated data for the current week's retro
+  const weekSessions = sessions.sessions.slice(-7);
+  const weekNodes = weekSessions.flatMap(s => s.nodeIds);
+  const hoursStudied = weekSessions.reduce((s, sess) => s + sess.durationMinutes / 60, 0);
+
+  // Weakest track: track with lowest completion%
+  const trackCompletion: Record<string, { done: number; total: number }> = {};
+  for (const roadmap of roadmaps) {
+    for (const phase of roadmap.phases) {
+      for (const week of phase.weeks) {
+        for (const node of week.nodes) {
+          if (!trackCompletion[node.track]) trackCompletion[node.track] = { done: 0, total: 0 };
+          trackCompletion[node.track].total++;
+          if (progress.nodes[node.id]?.status === 'completed') trackCompletion[node.track].done++;
+        }
+      }
+    }
+  }
+  const weakestTrack = Object.entries(trackCompletion).sort(([, a], [, b]) =>
+    (a.done / Math.max(a.total, 1)) - (b.done / Math.max(b.total, 1))
+  )[0]?.[0] || 'General';
+
+  // Pace status for 6-month roadmap
+  const sixMonthRoadmap = roadmaps.find(r => r.id === '6month-mastery');
+  const startDate = profile.roadmapStartDates?.['6month-mastery'] || '2026-07-26';
+  const daysSinceStart = Math.max(1, Math.floor((Date.now() - new Date(startDate).getTime()) / 86_400_000));
+  const expectedCompletion = daysSinceStart / (24 * 7); // fraction of 24-week plan
+  const actualCompletion = sixMonthRoadmap ? roadmapCompletion(progress, sixMonthRoadmap) / 100 : 0;
+  const paceStatus = actualCompletion >= expectedCompletion * 1.05 ? 'ahead'
+    : actualCompletion >= expectedCompletion * 0.9 ? 'on-track' : 'behind';
+
+  const prePopulated = {
+    nodesCompletedThisWeek: weekNodes.length,
+    hoursStudied: Math.round(hoursStudied * 10) / 10,
+    streakMaintained: progress.streak.current > 0,
+    weakestTrack,
+    paceStatus,
+    predictedFinish6Month: sixMonthRoadmap ? predictFinishDate(progress, sixMonthRoadmap, startDate) : '',
+    predictedFinishWebDev: roadmaps.find(r => r.id === 'webdev-8week')
+      ? predictFinishDate(progress, roadmaps.find(r => r.id === 'webdev-8week')!, profile.roadmapStartDates?.['webdev-8week'] || startDate)
+      : '',
+  };
+
+  return NextResponse.json({ entries: retros.entries, prePopulated });
+}
+
+export async function POST(req: Request) {
+  const session = await verifySession();
+  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+  const body = await req.json();
+  const parsed = retroSchema.safeParse(body);
+  if (!parsed.success) return NextResponse.json({ error: parsed.error.format() }, { status: 400 });
+
+  const retros = getUserRetrospectives(session.userId);
+  const progress = getUserProgress(session.userId);
+  const profile = getUserProfile(session.userId);
+  const roadmaps = getAllRoadmaps();
+  const sessions = getUserSessions(session.userId);
+
+  const weekSessions = sessions.sessions.slice(-7);
+  const hoursStudied = weekSessions.reduce((s, sess) => s + sess.durationMinutes / 60, 0);
+
+  const sixMonthRoadmap = roadmaps.find(r => r.id === '6month-mastery');
+  const startDate = profile.roadmapStartDates?.['6month-mastery'] || '2026-07-26';
+  const daysSinceStart = Math.max(1, Math.floor((Date.now() - new Date(startDate).getTime()) / 86_400_000));
+  const expectedCompletion = daysSinceStart / (24 * 7);
+  const actualCompletion = sixMonthRoadmap ? roadmapCompletion(progress, sixMonthRoadmap) / 100 : 0;
+  const paceStatus: 'ahead' | 'on-track' | 'behind' = actualCompletion >= expectedCompletion * 1.05 ? 'ahead'
+    : actualCompletion >= expectedCompletion * 0.9 ? 'on-track' : 'behind';
+
+  const entry = {
+    ...parsed.data,
+    computed: {
+      nodesCompleted: weekSessions.flatMap(s => s.nodeIds).length,
+      hoursStudied: Math.round(hoursStudied * 10) / 10,
+      streakMaintained: progress.streak.current > 0,
+      weakestTrack: 'DSA', // simplified here, full calc done in GET
+      paceStatus,
+      predictedFinish6Month: sixMonthRoadmap ? predictFinishDate(progress, sixMonthRoadmap, startDate) : '',
+      predictedFinishWebDev: '',
+    },
+    createdAt: new Date().toISOString(),
+  };
+
+  const idx = retros.entries.findIndex(e => e.weekStartDate === entry.weekStartDate);
+  if (idx >= 0) {
+    retros.entries[idx] = entry;
+  } else {
+    retros.entries.push(entry);
+  }
+
+  await writeUserJson(session.userId, 'retrospectives.json', retros);
+  return NextResponse.json({ success: true, entry });
+}

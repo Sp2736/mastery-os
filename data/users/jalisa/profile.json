@@ -1,0 +1,24 @@
+{
+  "userId": "jalisa",
+  "displayName": "Jalisa",
+  "avatarInitials": "JA",
+  "themeAccent": {
+    "h": 37,
+    "s": 94,
+    "l": 50
+  },
+  "workingHours": {
+    "start": "09:00",
+    "end": "23:00"
+  },
+  "preferredStudyDuration": 60,
+  "roadmapStartDates": {
+    "6month-mastery": "2026-07-26",
+    "webdev-8week": "2026-07-26"
+  },
+  "activeRoadmaps": [
+    "6month-mastery",
+    "webdev-8week"
+  ],
+  "createdAt": "2026-07-26T08:28:15.773Z"
+}

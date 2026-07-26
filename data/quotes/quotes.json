@@ -1,0 +1,1384 @@
+{
+  "quotes": [
+    {
+      "text": "Discipline equals freedom.",
+      "author": "Jocko Willink",
+      "category": "discipline"
+    },
+    {
+      "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+      "author": "Aristotle",
+      "category": "discipline"
+    },
+    {
+      "text": "The pain of discipline is far less than the pain of regret.",
+      "author": "Unknown",
+      "category": "discipline"
+    },
+    {
+      "text": "Motivation is what gets you started. Habit is what keeps you going.",
+      "author": "Jim Ryun",
+      "category": "discipline"
+    },
+    {
+      "text": "Self-control is strength. Calmness is mastery. You have to get to a point where your mood doesn't shift based on the insignificant actions of someone else.",
+      "author": "Morgan Freeman",
+      "category": "discipline"
+    },
+    {
+      "text": "Success is the sum of small efforts repeated day in and day out.",
+      "author": "Robert Collier",
+      "category": "discipline"
+    },
+    {
+      "text": "All great achievements require time.",
+      "author": "Maya Angelou",
+      "category": "discipline"
+    },
+    {
+      "text": "The secret of getting ahead is getting started.",
+      "author": "Mark Twain",
+      "category": "discipline"
+    },
+    {
+      "text": "It does not matter how slowly you go as long as you do not stop.",
+      "author": "Confucius",
+      "category": "consistency"
+    },
+    {
+      "text": "The chains of habit are too light to be felt until they are too heavy to be broken.",
+      "author": "Warren Buffett",
+      "category": "consistency"
+    },
+    {
+      "text": "Consistency is what transforms average into excellence.",
+      "author": "Unknown",
+      "category": "consistency"
+    },
+    {
+      "text": "Small daily improvements over time lead to stunning results.",
+      "author": "Robin Sharma",
+      "category": "consistency"
+    },
+    {
+      "text": "A year from now you may wish you had started today.",
+      "author": "Karen Lamb",
+      "category": "consistency"
+    },
+    {
+      "text": "You don't rise to the level of your goals. You fall to the level of your systems.",
+      "author": "James Clear",
+      "category": "consistency"
+    },
+    {
+      "text": "Make it work, make it right, make it fast.",
+      "author": "Kent Beck",
+      "category": "engineering"
+    },
+    {
+      "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "author": "Martin Fowler",
+      "category": "engineering"
+    },
+    {
+      "text": "The most powerful tool we have as developers is automation.",
+      "author": "Scott Hanselman",
+      "category": "engineering"
+    },
+    {
+      "text": "First, solve the problem. Then, write the code.",
+      "author": "John Johnson",
+      "category": "engineering"
+    },
+    {
+      "text": "Code is like humor. When you have to explain it, it's bad.",
+      "author": "Cory House",
+      "category": "engineering"
+    },
+    {
+      "text": "Simplicity is the ultimate sophistication.",
+      "author": "Leonardo da Vinci",
+      "category": "engineering"
+    },
+    {
+      "text": "The best code is no code at all.",
+      "author": "Jeff Atwood",
+      "category": "engineering"
+    },
+    {
+      "text": "Software is a great combination between artistry and engineering.",
+      "author": "Bill Gates",
+      "category": "engineering"
+    },
+    {
+      "text": "Programming isn't about what you know; it's about what you can figure out.",
+      "author": "Chris Pine",
+      "category": "programming"
+    },
+    {
+      "text": "The function of good software is to make the complex appear simple.",
+      "author": "Grady Booch",
+      "category": "programming"
+    },
+    {
+      "text": "In programming, the hard part isn't solving problems, but deciding what problems to solve.",
+      "author": "Paul Graham",
+      "category": "programming"
+    },
+    {
+      "text": "Talk is cheap. Show me the code.",
+      "author": "Linus Torvalds",
+      "category": "programming"
+    },
+    {
+      "text": "Java is to JavaScript what car is to carpet.",
+      "author": "Chris Heilmann",
+      "category": "programming"
+    },
+    {
+      "text": "It is not enough to do your best; you must know what to do, and then do your best.",
+      "author": "W. Edwards Deming",
+      "category": "programming"
+    },
+    {
+      "text": "You have power over your mind, not outside events. Realize this, and you will find strength.",
+      "author": "Marcus Aurelius",
+      "category": "stoicism"
+    },
+    {
+      "text": "Waste no more time arguing about what a good man should be. Be one.",
+      "author": "Marcus Aurelius",
+      "category": "stoicism"
+    },
+    {
+      "text": "The impediment to action advances action. What stands in the way becomes the way.",
+      "author": "Marcus Aurelius",
+      "category": "stoicism"
+    },
+    {
+      "text": "Man is not disturbed by events, but by his opinions about them.",
+      "author": "Epictetus",
+      "category": "stoicism"
+    },
+    {
+      "text": "If you want to improve, be content to be thought foolish and stupid.",
+      "author": "Epictetus",
+      "category": "stoicism"
+    },
+    {
+      "text": "Luck is what happens when preparation meets opportunity.",
+      "author": "Seneca",
+      "category": "stoicism"
+    },
+    {
+      "text": "Begin at once to live, and count each separate day as a separate life.",
+      "author": "Seneca",
+      "category": "stoicism"
+    },
+    {
+      "text": "The only limit to our realization of tomorrow will be our doubts of today.",
+      "author": "Franklin D. Roosevelt",
+      "category": "ambition"
+    },
+    {
+      "text": "Dream big and dare to fail.",
+      "author": "Norman Vaughan",
+      "category": "ambition"
+    },
+    {
+      "text": "The biggest risk is not taking any risk.",
+      "author": "Mark Zuckerberg",
+      "category": "ambition"
+    },
+    {
+      "text": "Shoot for the moon. Even if you miss, you'll land among the stars.",
+      "author": "Norman Vincent Peale",
+      "category": "ambition"
+    },
+    {
+      "text": "Your time is limited, so don't waste it living someone else's life.",
+      "author": "Steve Jobs",
+      "category": "ambition"
+    },
+    {
+      "text": "The real measure of your wealth is how much you'd be worth if you lost all your money.",
+      "author": "Unknown",
+      "category": "wealth"
+    },
+    {
+      "text": "Compound interest is the eighth wonder of the world.",
+      "author": "Albert Einstein",
+      "category": "wealth"
+    },
+    {
+      "text": "Do not save what is left after spending; instead spend what is left after saving.",
+      "author": "Warren Buffett",
+      "category": "wealth"
+    },
+    {
+      "text": "Risk comes from not knowing what you are doing.",
+      "author": "Warren Buffett",
+      "category": "wealth"
+    },
+    {
+      "text": "The goal of investing is not to minimize boredom, it's to maximize returns.",
+      "author": "Peter Lynch",
+      "category": "wealth"
+    },
+    {
+      "text": "The best time to plant a tree was 20 years ago. The second best time is now.",
+      "author": "Chinese Proverb",
+      "category": "entrepreneurship"
+    },
+    {
+      "text": "Ideas are easy. Implementation is hard.",
+      "author": "Guy Kawasaki",
+      "category": "entrepreneurship"
+    },
+    {
+      "text": "Your most unhappy customers are your greatest source of learning.",
+      "author": "Bill Gates",
+      "category": "entrepreneurship"
+    },
+    {
+      "text": "Fail often so you can succeed sooner.",
+      "author": "Tom Kelley",
+      "category": "entrepreneurship"
+    },
+    {
+      "text": "The way to get started is to quit talking and begin doing.",
+      "author": "Walt Disney",
+      "category": "entrepreneurship"
+    },
+    {
+      "text": "A startup is a company designed to grow fast.",
+      "author": "Paul Graham",
+      "category": "startups"
+    },
+    {
+      "text": "Make something people want.",
+      "author": "Paul Graham",
+      "category": "startups"
+    },
+    {
+      "text": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "category": "startups"
+    },
+    {
+      "text": "Move fast and break things.",
+      "author": "Mark Zuckerberg",
+      "category": "startups"
+    },
+    {
+      "text": "Perfect is the enemy of good.",
+      "author": "Voltaire",
+      "category": "startups"
+    },
+    {
+      "text": "Leadership is not about being in charge. It's about taking care of those in your charge.",
+      "author": "Simon Sinek",
+      "category": "leadership"
+    },
+    {
+      "text": "The greatest leader is not necessarily the one who does the greatest things. He is the one that gets the people to do the greatest things.",
+      "author": "Ronald Reagan",
+      "category": "leadership"
+    },
+    {
+      "text": "A good leader takes a little more than his share of the blame, a little less than his share of the credit.",
+      "author": "Arnold H. Glasgow",
+      "category": "leadership"
+    },
+    {
+      "text": "Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding.",
+      "author": "William Paul Thurston",
+      "category": "mathematics"
+    },
+    {
+      "text": "The essence of mathematics lies in its freedom.",
+      "author": "Georg Cantor",
+      "category": "mathematics"
+    },
+    {
+      "text": "Without mathematics, there is nothing you can do. Everything around you is mathematics.",
+      "author": "Shakuntala Devi",
+      "category": "mathematics"
+    },
+    {
+      "text": "Go down deep enough into anything and you will find mathematics.",
+      "author": "Dean Schlicter",
+      "category": "mathematics"
+    },
+    {
+      "text": "Life is what happens when you're busy making other plans.",
+      "author": "John Lennon",
+      "category": "life"
+    },
+    {
+      "text": "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+      "author": "Ralph Waldo Emerson",
+      "category": "life"
+    },
+    {
+      "text": "The unexamined life is not worth living.",
+      "author": "Socrates",
+      "category": "life"
+    },
+    {
+      "text": "In the end, it is not the years in your life that count. It's the life in your years.",
+      "author": "Abraham Lincoln",
+      "category": "life"
+    },
+    {
+      "text": "Take care of your body. It's the only place you have to live.",
+      "author": "Jim Rohn",
+      "category": "fitness"
+    },
+    {
+      "text": "No matter how slow you go, you are still lapping everybody on the couch.",
+      "author": "Unknown",
+      "category": "fitness"
+    },
+    {
+      "text": "The hardest lift is lifting your butt off the couch.",
+      "author": "Unknown",
+      "category": "fitness"
+    },
+    {
+      "text": "The stock market is a device for transferring money from the impatient to the patient.",
+      "author": "Warren Buffett",
+      "category": "investing"
+    },
+    {
+      "text": "In investing, what is comfortable is rarely profitable.",
+      "author": "Robert Arnott",
+      "category": "investing"
+    },
+    {
+      "text": "The individual investor should act consistently as an investor and not as a speculator.",
+      "author": "Benjamin Graham",
+      "category": "investing"
+    },
+    {
+      "text": "Software is eating the world.",
+      "author": "Marc Andreessen",
+      "category": "software"
+    },
+    {
+      "text": "The computer was born to solve problems that did not exist before.",
+      "author": "Bill Gates",
+      "category": "software"
+    },
+    {
+      "text": "Every great developer you know got there by solving problems they were unqualified to solve until they did it.",
+      "author": "Patrick McKenzie",
+      "category": "software"
+    },
+    {
+      "text": "The art of programming is the art of organizing complexity.",
+      "author": "Edsger Dijkstra",
+      "category": "software"
+    },
+    {
+      "text": "Financial freedom is available to those who learn about it and work for it.",
+      "author": "Robert Kiyosaki",
+      "category": "financial freedom"
+    },
+    {
+      "text": "The goal isn't more money. The goal is living life on your terms.",
+      "author": "Chris Brogan",
+      "category": "financial freedom"
+    },
+    {
+      "text": "You don't build wealth to buy things. You build wealth to buy time.",
+      "author": "Naval Ravikant",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Do what you have to do until you can do what you want to do.",
+      "author": "Oprah Winfrey",
+      "category": "perseverance"
+    },
+    {
+      "text": "An investment in knowledge pays the best interest.",
+      "author": "Benjamin Franklin",
+      "category": "learning"
+    },
+    {
+      "text": "Code today so you can travel tomorrow.",
+      "author": "Mastery OS",
+      "category": "goals"
+    },
+    {
+      "text": "Every line of code you write is a brick in the foundation of your family's future.",
+      "author": "Mastery OS",
+      "category": "family"
+    },
+    {
+      "text": "Wealth is not about having a lot of money; it's about having a lot of options.",
+      "author": "Chris Rock",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Don't work for money; make money work for you.",
+      "author": "Robert Kiyosaki",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Sacrifice today for the options of tomorrow.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "The hardest climb yields the most beautiful view. Travel the world.",
+      "author": "Unknown",
+      "category": "travel"
+    },
+    {
+      "text": "Freedom is the ultimate currency.",
+      "author": "Unknown",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Build the systems that will let you sleep while you earn.",
+      "author": "Naval Ravikant",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Work until your bank account looks like a phone number.",
+      "author": "Unknown",
+      "category": "goals"
+    },
+    {
+      "text": "Financial peace isn't the acquisition of stuff. It's learning to live on less than you make.",
+      "author": "Dave Ramsey",
+      "category": "financial freedom"
+    },
+    {
+      "text": "You are doing this to give your family the life they deserve.",
+      "author": "Mastery OS",
+      "category": "family"
+    },
+    {
+      "text": "Travel is the only thing you buy that makes you richer.",
+      "author": "Anonymous",
+      "category": "travel"
+    },
+    {
+      "text": "The world is a book and those who do not travel read only one page.",
+      "author": "St. Augustine",
+      "category": "travel"
+    },
+    {
+      "text": "Generational wealth starts with a single disciplined generation.",
+      "author": "Unknown",
+      "category": "family"
+    },
+    {
+      "text": "To travel is to discover that everyone is wrong about other countries.",
+      "author": "Aldous Huxley",
+      "category": "travel"
+    },
+    {
+      "text": "Don't stop until you can code from a beach in Bali.",
+      "author": "Mastery OS",
+      "category": "travel"
+    },
+    {
+      "text": "Create the freedom to be wherever you want, whenever you want.",
+      "author": "Unknown",
+      "category": "freedom"
+    },
+    {
+      "text": "Your family's legacy is being written by your daily commits.",
+      "author": "Mastery OS",
+      "category": "family"
+    },
+    {
+      "text": "Money won't create success, the freedom to make it will.",
+      "author": "Nelson Mandela",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Every bug fixed brings you one step closer to financial independence.",
+      "author": "Mastery OS",
+      "category": "financial freedom"
+    },
+    {
+      "text": "First, solve the problem. Then, write the code.",
+      "author": "John Johnson",
+      "category": "engineering"
+    },
+    {
+      "text": "Experience is the name everyone gives to their mistakes.",
+      "author": "Oscar Wilde",
+      "category": "learning"
+    },
+    {
+      "text": "In software, the most beautiful code is the code you never have to write.",
+      "author": "Unknown",
+      "category": "engineering"
+    },
+    {
+      "text": "Simplicity is the soul of efficiency.",
+      "author": "Austin Freeman",
+      "category": "engineering"
+    },
+    {
+      "text": "Before software can be reusable it first has to be usable.",
+      "author": "Ralph Johnson",
+      "category": "engineering"
+    },
+    {
+      "text": "Make it work, make it right, make it fast.",
+      "author": "Kent Beck",
+      "category": "engineering"
+    },
+    {
+      "text": "Programming isn't about what you know; it's about what you can figure out.",
+      "author": "Chris Pine",
+      "category": "learning"
+    },
+    {
+      "text": "Good code is its own best documentation.",
+      "author": "Steve McConnell",
+      "category": "engineering"
+    },
+    {
+      "text": "The only way to learn a new programming language is by writing programs in it.",
+      "author": "Dennis Ritchie",
+      "category": "learning"
+    },
+    {
+      "text": "It's not a bug. It's an undocumented feature.",
+      "author": "Anonymous",
+      "category": "engineering"
+    },
+    {
+      "text": "There is no learning without struggle.",
+      "author": "Unknown",
+      "category": "learning"
+    },
+    {
+      "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "author": "Martin Fowler",
+      "category": "engineering"
+    },
+    {
+      "text": "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code.",
+      "author": "Dan Salomon",
+      "category": "engineering"
+    },
+    {
+      "text": "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away.",
+      "author": "Antoine de Saint-Exupery",
+      "category": "engineering"
+    },
+    {
+      "text": "Code is like humor. When you have to explain it, it's bad.",
+      "author": "Cory House",
+      "category": "engineering"
+    },
+    {
+      "text": "Fix the cause, not the symptom.",
+      "author": "Steve Maguire",
+      "category": "engineering"
+    },
+    {
+      "text": "Optimism is an occupational hazard of programming: feedback is the treatment.",
+      "author": "Kent Beck",
+      "category": "engineering"
+    },
+    {
+      "text": "Software and cathedrals are much the same – first we build them, then we pray.",
+      "author": "Sam Ewing",
+      "category": "engineering"
+    },
+    {
+      "text": "Learning to code is learning to think.",
+      "author": "Unknown",
+      "category": "learning"
+    },
+    {
+      "text": "If you don't make mistakes, you're not working on hard enough problems.",
+      "author": "Frank Wilczek",
+      "category": "learning"
+    },
+    {
+      "text": "Every expert was once a beginner.",
+      "author": "Helen Hayes",
+      "category": "learning"
+    },
+    {
+      "text": "The best error message is the one that never shows up.",
+      "author": "Thomas Fuchs",
+      "category": "engineering"
+    },
+    {
+      "text": "The most important property of a program is whether it accomplishes the intention of its user.",
+      "author": "C.A.R. Hoare",
+      "category": "engineering"
+    },
+    {
+      "text": "A good programmer is someone who always looks both ways before crossing a one-way street.",
+      "author": "Doug Linder",
+      "category": "engineering"
+    },
+    {
+      "text": "Don't write better error messages, write code that doesn't need them.",
+      "author": "Jason C. McDonald",
+      "category": "engineering"
+    },
+    {
+      "text": "The computer was born to solve problems that did not exist before.",
+      "author": "Bill Gates",
+      "category": "engineering"
+    },
+    {
+      "text": "Mastery requires patience.",
+      "author": "Robert Greene",
+      "category": "learning"
+    },
+    {
+      "text": "Truth can only be found in one place: the code.",
+      "author": "Robert C. Martin",
+      "category": "engineering"
+    },
+    {
+      "text": "You can't have great software without a great team.",
+      "author": "Jim McCarthy",
+      "category": "teamwork"
+    },
+    {
+      "text": "Debugging is twice as hard as writing the code in the first place.",
+      "author": "Brian Kernighan",
+      "category": "engineering"
+    },
+    {
+      "text": "The only limit to your impact is your imagination and commitment.",
+      "author": "Anthony Robbins",
+      "category": "perseverance"
+    },
+    {
+      "text": "One of the best programming skills you can have is knowing when to walk away for awhile.",
+      "author": "Oscar Godson",
+      "category": "engineering"
+    },
+    {
+      "text": "Design and programming are human activities; forget that and all is lost.",
+      "author": "Bjarne Stroustrup",
+      "category": "engineering"
+    },
+    {
+      "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
+      "author": "Harold Abelson",
+      "category": "engineering"
+    },
+    {
+      "text": "A smart programmer writes code that a computer can execute. A wise programmer writes code that a team can maintain.",
+      "author": "Unknown",
+      "category": "engineering"
+    },
+    {
+      "text": "Data dominates. If you've chosen the right data structures and organized things well, the algorithms will almost always be self-evident.",
+      "author": "Rob Pike",
+      "category": "engineering"
+    },
+    {
+      "text": "What one programmer can do in one month, two programmers can do in two months.",
+      "author": "Fred Brooks",
+      "category": "teamwork"
+    },
+    {
+      "text": "It is not that I'm so smart. But I stay with the questions much longer.",
+      "author": "Albert Einstein",
+      "category": "perseverance"
+    },
+    {
+      "text": "Programming is thinking, not typing.",
+      "author": "Casey Muratori",
+      "category": "engineering"
+    },
+    {
+      "text": "Continuous learning is the minimum requirement for success in any field.",
+      "author": "Denis Waitley",
+      "category": "learning"
+    },
+    {
+      "text": "To replace programmers with robots, clients will have to accurately describe what they want. We're safe.",
+      "author": "Unknown",
+      "category": "engineering"
+    },
+    {
+      "text": "Don't let the noise of others' opinions drown out your own inner voice.",
+      "author": "Steve Jobs",
+      "category": "leadership"
+    },
+    {
+      "text": "Learning never exhausts the mind.",
+      "author": "Leonardo da Vinci",
+      "category": "learning"
+    },
+    {
+      "text": "Study hard what interests you the most in the most undisciplined, irreverent and original manner possible.",
+      "author": "Richard Feynman",
+      "category": "learning"
+    },
+    {
+      "text": "Stay hungry. Stay foolish.",
+      "author": "Steve Jobs",
+      "category": "learning"
+    },
+    {
+      "text": "Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing.",
+      "author": "Pele",
+      "category": "perseverance"
+    },
+    {
+      "text": "The expert in anything was once a beginner.",
+      "author": "Unknown",
+      "category": "learning"
+    },
+    {
+      "text": "If we wish to count lines of code, we should not regard them as lines produced but as lines spent.",
+      "author": "Edsger Dijkstra",
+      "category": "engineering"
+    },
+    {
+      "text": "Walking on water and developing software from a specification are easy if both are frozen.",
+      "author": "Edward V. Berard",
+      "category": "engineering"
+    },
+    {
+      "text": "Software undergoes beta testing shortly before it's released. Beta is Latin for 'still doesn't work.'",
+      "author": "Anonymous",
+      "category": "engineering"
+    },
+    {
+      "text": "It does not matter how slowly you go as long as you do not stop.",
+      "author": "Confucius",
+      "category": "perseverance"
+    },
+    {
+      "text": "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+      "author": "Thomas Edison",
+      "category": "perseverance"
+    },
+    {
+      "text": "Fall seven times and stand up eight.",
+      "author": "Japanese Proverb",
+      "category": "perseverance"
+    },
+    {
+      "text": "Perseverance is not a long race; it is many short races one after the other.",
+      "author": "Walter Elliot",
+      "category": "perseverance"
+    },
+    {
+      "text": "Through hard work, perseverance and a faith in God, you can live your dreams.",
+      "author": "Ben Carson",
+      "category": "perseverance"
+    },
+    {
+      "text": "You just can't beat the person who never gives up.",
+      "author": "Babe Ruth",
+      "category": "perseverance"
+    },
+    {
+      "text": "I have not failed. I've just found 10,000 ways that won't work.",
+      "author": "Thomas Edison",
+      "category": "perseverance"
+    },
+    {
+      "text": "A winner is just a loser who tried one more time.",
+      "author": "George M. Moore Jr.",
+      "category": "perseverance"
+    },
+    {
+      "text": "Courage doesn't always roar. Sometimes courage is the quiet voice at the end of the day saying, 'I will try again tomorrow.'",
+      "author": "Mary Anne Radmacher",
+      "category": "perseverance"
+    },
+    {
+      "text": "Success seems to be largely a matter of hanging on after others have let go.",
+      "author": "William Feather",
+      "category": "perseverance"
+    },
+    {
+      "text": "It always seems impossible until it's done.",
+      "author": "Nelson Mandela",
+      "category": "perseverance"
+    },
+    {
+      "text": "If you are going through hell, keep going.",
+      "author": "Winston Churchill",
+      "category": "perseverance"
+    },
+    {
+      "text": "Never give up on a dream just because of the time it will take to accomplish it. The time will pass anyway.",
+      "author": "Earl Nightingale",
+      "category": "perseverance"
+    },
+    {
+      "text": "Don't watch the clock; do what it does. Keep going.",
+      "author": "Sam Levenson",
+      "category": "perseverance"
+    },
+    {
+      "text": "Hard times don't create heroes. It is during the hard times when the 'hero' within us is revealed.",
+      "author": "Bob Riley",
+      "category": "perseverance"
+    },
+    {
+      "text": "When you feel like quitting, remember why you started.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "Persistence can change failure into extraordinary achievement.",
+      "author": "Matt Biondi",
+      "category": "perseverance"
+    },
+    {
+      "text": "Obstacles are those frightful things you see when you take your eyes off your goal.",
+      "author": "Henry Ford",
+      "category": "perseverance"
+    },
+    {
+      "text": "Energy and persistence conquer all things.",
+      "author": "Benjamin Franklin",
+      "category": "perseverance"
+    },
+    {
+      "text": "Great works are performed not by strength but by perseverance.",
+      "author": "Samuel Johnson",
+      "category": "perseverance"
+    },
+    {
+      "text": "The only guarantee for failure is to stop trying.",
+      "author": "John C. Maxwell",
+      "category": "perseverance"
+    },
+    {
+      "text": "Never yield to the apparently overwhelming might of the enemy.",
+      "author": "Winston Churchill",
+      "category": "perseverance"
+    },
+    {
+      "text": "Keep your face always toward the sunshine—and shadows will fall behind you.",
+      "author": "Walt Whitman",
+      "category": "perseverance"
+    },
+    {
+      "text": "Believe you can and you're halfway there.",
+      "author": "Theodore Roosevelt",
+      "category": "perseverance"
+    },
+    {
+      "text": "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+      "author": "Thomas Edison",
+      "category": "perseverance"
+    },
+    {
+      "text": "Difficulties are meant to rouse, not discourage. The human spirit is to grow strong by conflict.",
+      "author": "William Ellery Channing",
+      "category": "perseverance"
+    },
+    {
+      "text": "Do not fear failure but rather fear not trying.",
+      "author": "Roy T. Bennett",
+      "category": "perseverance"
+    },
+    {
+      "text": "Defeat is not the worst of failures. Not to have tried is the true failure.",
+      "author": "George Edward Woodberry",
+      "category": "perseverance"
+    },
+    {
+      "text": "A river cuts through rock, not because of its power, but because of its persistence.",
+      "author": "Jim Watkins",
+      "category": "perseverance"
+    },
+    {
+      "text": "Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish.",
+      "author": "John Quincy Adams",
+      "category": "perseverance"
+    },
+    {
+      "text": "By persevering your daily habits, you secure your family's future.",
+      "author": "Mastery OS",
+      "category": "family"
+    },
+    {
+      "text": "Keep pushing. Your future self is watching you right now through memories.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "There are no shortcuts to any place worth going.",
+      "author": "Beverly Sills",
+      "category": "perseverance"
+    },
+    {
+      "text": "Don't stop when you're tired. Stop when you're done.",
+      "author": "David Goggins",
+      "category": "perseverance"
+    },
+    {
+      "text": "The resistance you fight physically in the gym and the resistance you fight in life can only build a strong character.",
+      "author": "Arnold Schwarzenegger",
+      "category": "perseverance"
+    },
+    {
+      "text": "If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward.",
+      "author": "Martin Luther King Jr.",
+      "category": "perseverance"
+    },
+    {
+      "text": "The secret of getting ahead is getting started.",
+      "author": "Mark Twain",
+      "category": "perseverance"
+    },
+    {
+      "text": "Whatever it takes.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "Remember that guy that gave up? Neither does no one else.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "Pain is temporary. Quitting lasts forever.",
+      "author": "Lance Armstrong",
+      "category": "perseverance"
+    },
+    {
+      "text": "What comes easy won't last, what lasts won't come easy.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "Grit is living life like it's a marathon, not a sprint.",
+      "author": "Angela Duckworth",
+      "category": "perseverance"
+    },
+    {
+      "text": "Push harder than yesterday if you want a different tomorrow.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "It's a slow process, but quitting won't speed it up.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "Stay positive, work hard, make it happen.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "You were put on this earth to achieve your greatest self, to live out your purpose, and to do it courageously.",
+      "author": "Steve Maraboli",
+      "category": "perseverance"
+    },
+    {
+      "text": "If it doesn't challenge you, it won't change you.",
+      "author": "Fred DeVito",
+      "category": "perseverance"
+    },
+    {
+      "text": "Turn your pain into power.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "Grind while they rest. Study when they sleep.",
+      "author": "Unknown",
+      "category": "perseverance"
+    },
+    {
+      "text": "There is no excuse for not trying.",
+      "author": "Barack Obama",
+      "category": "perseverance"
+    },
+    {
+      "text": "Talent wins games, but teamwork and intelligence win championships.",
+      "author": "Michael Jordan",
+      "category": "teamwork"
+    },
+    {
+      "text": "If you want to go fast, go alone. If you want to go far, go together.",
+      "author": "African Proverb",
+      "category": "teamwork"
+    },
+    {
+      "text": "Alone we can do so little; together we can do so much.",
+      "author": "Helen Keller",
+      "category": "teamwork"
+    },
+    {
+      "text": "Great things in business are never done by one person. They're done by a team of people.",
+      "author": "Steve Jobs",
+      "category": "teamwork"
+    },
+    {
+      "text": "Teamwork begins by building trust. And the only way to do that is to overcome our need for invulnerability.",
+      "author": "Patrick Lencioni",
+      "category": "teamwork"
+    },
+    {
+      "text": "None of us is as smart as all of us.",
+      "author": "Ken Blanchard",
+      "category": "teamwork"
+    },
+    {
+      "text": "Coming together is a beginning, staying together is progress, and working together is success.",
+      "author": "Henry Ford",
+      "category": "teamwork"
+    },
+    {
+      "text": "The strength of the team is each individual member. The strength of each member is the team.",
+      "author": "Phil Jackson",
+      "category": "teamwork"
+    },
+    {
+      "text": "Leaders must be close enough to relate to others, but far enough ahead to motivate them.",
+      "author": "John C. Maxwell",
+      "category": "leadership"
+    },
+    {
+      "text": "A leader is one who knows the way, goes the way, and shows the way.",
+      "author": "John C. Maxwell",
+      "category": "leadership"
+    },
+    {
+      "text": "Management is doing things right; leadership is doing the right things.",
+      "author": "Peter Drucker",
+      "category": "leadership"
+    },
+    {
+      "text": "Innovation distinguishes between a leader and a follower.",
+      "author": "Steve Jobs",
+      "category": "leadership"
+    },
+    {
+      "text": "Leadership is the capacity to translate vision into reality.",
+      "author": "Warren Bennis",
+      "category": "leadership"
+    },
+    {
+      "text": "Do not follow where the path may lead. Go instead where there is no path and leave a trail.",
+      "author": "Ralph Waldo Emerson",
+      "category": "leadership"
+    },
+    {
+      "text": "Before you are a leader, success is all about growing yourself. When you become a leader, success is all about growing others.",
+      "author": "Jack Welch",
+      "category": "leadership"
+    },
+    {
+      "text": "The greatest leader is not necessarily the one who does the greatest things. He is the one that gets the people to do the greatest things.",
+      "author": "Ronald Reagan",
+      "category": "leadership"
+    },
+    {
+      "text": "To handle yourself, use your head; to handle others, use your heart.",
+      "author": "Eleanor Roosevelt",
+      "category": "leadership"
+    },
+    {
+      "text": "A boss has the title, a leader has the people.",
+      "author": "Simon Sinek",
+      "category": "leadership"
+    },
+    {
+      "text": "Good leaders build products. Great leaders build cultures. Good leaders deliver results. Great leaders develop people.",
+      "author": "Adam Grant",
+      "category": "leadership"
+    },
+    {
+      "text": "Leadership is unlocking people's potential to become better.",
+      "author": "Bill Bradley",
+      "category": "leadership"
+    },
+    {
+      "text": "The art of leadership is saying no, not yes. It is very easy to say yes.",
+      "author": "Tony Blair",
+      "category": "leadership"
+    },
+    {
+      "text": "Effective leadership is not about making speeches or being liked; leadership is defined by results not attributes.",
+      "author": "Peter Drucker",
+      "category": "leadership"
+    },
+    {
+      "text": "You don't need a title to be a leader.",
+      "author": "Mark Sanborn",
+      "category": "leadership"
+    },
+    {
+      "text": "A genuine leader is not a searcher for consensus but a molder of consensus.",
+      "author": "Martin Luther King Jr.",
+      "category": "leadership"
+    },
+    {
+      "text": "The function of leadership is to produce more leaders, not more followers.",
+      "author": "Ralph Nader",
+      "category": "leadership"
+    },
+    {
+      "text": "Leadership is lifting a person's vision to high sights, the raising of a person's performance to a higher standard.",
+      "author": "Peter Drucker",
+      "category": "leadership"
+    },
+    {
+      "text": "A good leader takes a little more than his share of the blame, a little less than his share of the credit.",
+      "author": "Arnold H. Glasow",
+      "category": "leadership"
+    },
+    {
+      "text": "There is no such thing as a self-made man. You will reach your goals only with the help of others.",
+      "author": "George Shinn",
+      "category": "teamwork"
+    },
+    {
+      "text": "Find a group of people who challenge and inspire you, spend a lot of time with them, and it will change your life.",
+      "author": "Amy Poehler",
+      "category": "teamwork"
+    },
+    {
+      "text": "Teamwork makes the dream work.",
+      "author": "John C. Maxwell",
+      "category": "teamwork"
+    },
+    {
+      "text": "Individually, we are one drop. Together, we are an ocean.",
+      "author": "Ryunosuke Satoro",
+      "category": "teamwork"
+    },
+    {
+      "text": "Collaboration allows teachers to capture each other's fund of collective intelligence.",
+      "author": "Mike Schmoker",
+      "category": "teamwork"
+    },
+    {
+      "text": "It takes two flints to make a fire.",
+      "author": "Louisa May Alcott",
+      "category": "teamwork"
+    },
+    {
+      "text": "We rise by lifting others.",
+      "author": "Robert Ingersoll",
+      "category": "teamwork"
+    },
+    {
+      "text": "To build a great team, you must first build trust.",
+      "author": "Unknown",
+      "category": "teamwork"
+    },
+    {
+      "text": "True leadership lies in guiding others to success.",
+      "author": "Bill Owens",
+      "category": "leadership"
+    },
+    {
+      "text": "You don't lead by hitting people over the head - that's assault, not leadership.",
+      "author": "Dwight D. Eisenhower",
+      "category": "leadership"
+    },
+    {
+      "text": "He who has never learned to obey cannot be a good commander.",
+      "author": "Aristotle",
+      "category": "leadership"
+    },
+    {
+      "text": "No man will make a great leader who wants to do it all himself or get all the credit for doing it.",
+      "author": "Andrew Carnegie",
+      "category": "leadership"
+    },
+    {
+      "text": "The supreme quality for leadership is unquestionably integrity.",
+      "author": "Dwight D. Eisenhower",
+      "category": "leadership"
+    },
+    {
+      "text": "Outstanding leaders go out of their way to boost the self-esteem of their personnel.",
+      "author": "Sam Walton",
+      "category": "leadership"
+    },
+    {
+      "text": "The quality of a leader is reflected in the standards they set for themselves.",
+      "author": "Ray Kroc",
+      "category": "leadership"
+    },
+    {
+      "text": "Lead from the back — and let others believe they are in front.",
+      "author": "Nelson Mandela",
+      "category": "leadership"
+    },
+    {
+      "text": "Example is not the main thing in influencing others. It is the only thing.",
+      "author": "Albert Schweitzer",
+      "category": "leadership"
+    },
+    {
+      "text": "You manage things; you lead people.",
+      "author": "Grace Hopper",
+      "category": "leadership"
+    },
+    {
+      "text": "The best executive is the one who has sense enough to pick good men to do what he wants done.",
+      "author": "Theodore Roosevelt",
+      "category": "leadership"
+    },
+    {
+      "text": "Earn your leadership every day.",
+      "author": "Michael Jordan",
+      "category": "leadership"
+    },
+    {
+      "text": "My job is not to be easy on people. My job is to make them better.",
+      "author": "Steve Jobs",
+      "category": "leadership"
+    },
+    {
+      "text": "A leader takes people where they want to go. A great leader takes people where they don't necessarily want to go, but ought to be.",
+      "author": "Rosalynn Carter",
+      "category": "leadership"
+    },
+    {
+      "text": "No one can whistle a symphony. It takes a whole orchestra to play it.",
+      "author": "H.E. Luccock",
+      "category": "teamwork"
+    },
+    {
+      "text": "Remember who you are doing this for: yourself and your family.",
+      "author": "Mastery OS",
+      "category": "family"
+    },
+    {
+      "text": "The best inheritance a parent can give their children is a few minutes of their time each day. Secure the freedom for it.",
+      "author": "Unknown",
+      "category": "family"
+    },
+    {
+      "text": "Financial freedom is the power to produce wealth and not necessarily having wealth.",
+      "author": "Unknown",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Make the sacrifices now so you can travel the globe without a return ticket.",
+      "author": "Mastery OS",
+      "category": "travel"
+    },
+    {
+      "text": "To awaken quite alone in a strange town is one of the pleasantest sensations in the world.",
+      "author": "Freya Stark",
+      "category": "travel"
+    },
+    {
+      "text": "We wander for distraction, but we travel for fulfillment.",
+      "author": "Hilaire Belloc",
+      "category": "travel"
+    },
+    {
+      "text": "Build an empire so your kids don't have to.",
+      "author": "Unknown",
+      "category": "family"
+    },
+    {
+      "text": "A year from now you will wish you had started today.",
+      "author": "Karen Lamb",
+      "category": "perseverance"
+    },
+    {
+      "text": "The tragedy of life doesn't lie in not reaching your goal. The tragedy lies in having no goals to reach.",
+      "author": "Benjamin Mays",
+      "category": "goals"
+    },
+    {
+      "text": "Working hard for something we don't care about is called stress; working hard for something we love is called passion.",
+      "author": "Simon Sinek",
+      "category": "goals"
+    },
+    {
+      "text": "I would rather own little and see the world than own the world and see little of it.",
+      "author": "Alexander Sattler",
+      "category": "travel"
+    },
+    {
+      "text": "You are one decision away from a completely different life.",
+      "author": "Mel Robbins",
+      "category": "goals"
+    },
+    {
+      "text": "Jobs fill your pocket, but adventures fill your soul.",
+      "author": "Jaime Lyn Beatty",
+      "category": "travel"
+    },
+    {
+      "text": "Your time is limited, so don't waste it living someone else's life.",
+      "author": "Steve Jobs",
+      "category": "freedom"
+    },
+    {
+      "text": "Wealth consists not in having great possessions, but in having few wants.",
+      "author": "Epictetus",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Do not save what is left after spending; instead spend what is left after saving.",
+      "author": "Warren Buffett",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Every day is a bank account, and time is our currency. No one is rich, no one is poor, we've got 24 hours each.",
+      "author": "Christopher Rice",
+      "category": "financial freedom"
+    },
+    {
+      "text": "Family is not an important thing. It's everything.",
+      "author": "Michael J. Fox",
+      "category": "family"
+    },
+    {
+      "text": "When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.",
+      "author": "Henry Ford",
+      "category": "perseverance"
+    },
+    {
+      "text": "You measure the size of the accomplishment by the obstacles you had to overcome to reach your goals.",
+      "author": "Booker T. Washington",
+      "category": "goals"
+    },
+    {
+      "text": "Stop shrinking to fit places you've outgrown.",
+      "author": "Unknown",
+      "category": "growth"
+    },
+    {
+      "text": "Live less out of habit and more out of intent.",
+      "author": "Unknown",
+      "category": "freedom"
+    },
+    {
+      "text": "The difference between ordinary and extraordinary is that little extra.",
+      "author": "Jimmy Johnson",
+      "category": "perseverance"
+    },
+    {
+      "text": "Man cannot discover new oceans unless he has the courage to lose sight of the shore.",
+      "author": "Andre Gide",
+      "category": "travel"
+    },
+    {
+      "text": "One day, all those late nights and early mornings will pay off. Keep going.",
+      "author": "Mastery OS",
+      "category": "perseverance"
+    }
+  ]
+}

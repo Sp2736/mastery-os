@@ -1,0 +1,352 @@
+{
+  "achievements": [
+    {
+      "id": "ach-first-day",
+      "title": "First Step",
+      "description": "Completed your very first task.",
+      "category": "consistency",
+      "rarity": "common",
+      "roadmapScope": "any",
+      "icon": "footprints",
+      "xpReward": 50,
+      "hidden": false,
+      "criteria": {
+        "type": "total-nodes",
+        "count": 1
+      }
+    },
+    {
+      "id": "ach-first-week",
+      "title": "First Week Down",
+      "description": "Completed every scheduled node in your first week.",
+      "category": "consistency",
+      "rarity": "common",
+      "roadmapScope": "any",
+      "icon": "flame",
+      "xpReward": 150,
+      "hidden": false,
+      "criteria": {
+        "type": "week-completion",
+        "count": 1
+      }
+    },
+    {
+      "id": "ach-streak-7",
+      "title": "Week Warrior",
+      "description": "Maintained a 7-day streak.",
+      "category": "consistency",
+      "rarity": "common",
+      "roadmapScope": "any",
+      "icon": "zap",
+      "xpReward": 100,
+      "hidden": false,
+      "criteria": {
+        "type": "streak",
+        "days": 7
+      }
+    },
+    {
+      "id": "ach-streak-14",
+      "title": "Two Weeks Strong",
+      "description": "Maintained a 14-day streak.",
+      "category": "consistency",
+      "rarity": "rare",
+      "roadmapScope": "any",
+      "icon": "zap",
+      "xpReward": 200,
+      "hidden": false,
+      "criteria": {
+        "type": "streak",
+        "days": 14
+      }
+    },
+    {
+      "id": "ach-streak-30",
+      "title": "Unbreakable",
+      "description": "30-day streak — iron discipline.",
+      "category": "consistency",
+      "rarity": "epic",
+      "roadmapScope": "any",
+      "icon": "shield",
+      "xpReward": 500,
+      "hidden": false,
+      "criteria": {
+        "type": "streak",
+        "days": 30
+      }
+    },
+    {
+      "id": "ach-streak-60",
+      "title": "Machine Mode",
+      "description": "60 days without breaking the chain.",
+      "category": "consistency",
+      "rarity": "legendary",
+      "roadmapScope": "any",
+      "icon": "crown",
+      "xpReward": 1000,
+      "hidden": false,
+      "criteria": {
+        "type": "streak",
+        "days": 60
+      }
+    },
+    {
+      "id": "ach-streak-100",
+      "title": "Centurion",
+      "description": "100-day streak. You are the roadmap.",
+      "category": "consistency",
+      "rarity": "legendary",
+      "roadmapScope": "any",
+      "icon": "trophy",
+      "xpReward": 2000,
+      "hidden": false,
+      "criteria": {
+        "type": "streak",
+        "days": 100
+      }
+    },
+    {
+      "id": "ach-first-contest",
+      "title": "Contestant",
+      "description": "Completed your first Codeforces contest.",
+      "category": "milestone",
+      "rarity": "common",
+      "roadmapScope": "6month-mastery",
+      "icon": "terminal",
+      "xpReward": 100,
+      "hidden": false,
+      "criteria": {
+        "type": "node-type",
+        "nodeType": "contest",
+        "count": 1
+      }
+    },
+    {
+      "id": "ach-100-problems",
+      "title": "Century Solver",
+      "description": "Solved 100 DSA problems.",
+      "category": "milestone",
+      "rarity": "epic",
+      "roadmapScope": "6month-mastery",
+      "icon": "hash",
+      "xpReward": 750,
+      "hidden": false,
+      "criteria": {
+        "type": "track-nodes",
+        "track": "DSA",
+        "count": 100
+      }
+    },
+    {
+      "id": "ach-first-book",
+      "title": "Bookworm v1",
+      "description": "Finished your first business/finance book.",
+      "category": "learning",
+      "rarity": "rare",
+      "roadmapScope": "6month-mastery",
+      "icon": "book-open",
+      "xpReward": 200,
+      "hidden": false,
+      "criteria": {
+        "type": "track-nodes",
+        "track": "Business",
+        "count": 4
+      }
+    },
+    {
+      "id": "ach-dsa-phase-1",
+      "title": "Pattern Hunter",
+      "description": "Completed Phase 1: DSA Patterns.",
+      "category": "milestone",
+      "rarity": "rare",
+      "roadmapScope": "6month-mastery",
+      "icon": "layers",
+      "xpReward": 400,
+      "hidden": false,
+      "criteria": {
+        "type": "phase-completion",
+        "phaseId": "phase-1"
+      }
+    },
+    {
+      "id": "ach-dp-master",
+      "title": "DP Demystified",
+      "description": "Completed the entire Dynamic Programming phase.",
+      "category": "milestone",
+      "rarity": "epic",
+      "roadmapScope": "6month-mastery",
+      "icon": "brain",
+      "xpReward": 600,
+      "hidden": false,
+      "criteria": {
+        "type": "phase-completion",
+        "phaseId": "phase-2"
+      }
+    },
+    {
+      "id": "ach-6month-complete",
+      "title": "Mastery OS: Complete",
+      "description": "Finished the full 6-Month Mastery Roadmap.",
+      "category": "legendary",
+      "rarity": "legendary",
+      "roadmapScope": "6month-mastery",
+      "icon": "star",
+      "xpReward": 5000,
+      "hidden": false,
+      "criteria": {
+        "type": "roadmap-completion",
+        "roadmapId": "6month-mastery"
+      }
+    },
+    {
+      "id": "ach-todo-rebuilt",
+      "title": "From Memory",
+      "description": "Rebuilt the todo list entirely from memory on Day 14.",
+      "category": "milestone",
+      "rarity": "rare",
+      "roadmapScope": "webdev-8week",
+      "icon": "code-2",
+      "xpReward": 200,
+      "hidden": false,
+      "criteria": {
+        "type": "specific-node",
+        "dayNumber": 14
+      }
+    },
+    {
+      "id": "ach-full-stack-crud",
+      "title": "Full Stack",
+      "description": "Shipped full-stack CRUD with auth on Day 42.",
+      "category": "milestone",
+      "rarity": "epic",
+      "roadmapScope": "webdev-8week",
+      "icon": "server",
+      "xpReward": 600,
+      "hidden": false,
+      "criteria": {
+        "type": "specific-node",
+        "dayNumber": 42
+      }
+    },
+    {
+      "id": "ach-solo-build",
+      "title": "Solo Architect",
+      "description": "Completed the Week 8 Solo Build — no AI, no reference.",
+      "category": "legendary",
+      "rarity": "legendary",
+      "roadmapScope": "webdev-8week",
+      "icon": "rocket",
+      "xpReward": 1500,
+      "hidden": false,
+      "criteria": {
+        "type": "phase-completion",
+        "phaseId": "phase-2"
+      }
+    },
+    {
+      "id": "ach-webdev-complete",
+      "title": "Manual Coder",
+      "description": "Finished the 8-Week Web Dev Roadmap without AI.",
+      "category": "legendary",
+      "rarity": "legendary",
+      "roadmapScope": "webdev-8week",
+      "icon": "award",
+      "xpReward": 3000,
+      "hidden": false,
+      "criteria": {
+        "type": "roadmap-completion",
+        "roadmapId": "webdev-8week"
+      }
+    },
+    {
+      "id": "ach-night-owl",
+      "title": "???",
+      "description": "Completed a task between midnight and 4am.",
+      "category": "hidden",
+      "rarity": "rare",
+      "roadmapScope": "any",
+      "icon": "moon",
+      "xpReward": 150,
+      "hidden": true,
+      "criteria": {
+        "type": "time-of-day",
+        "start": 0,
+        "end": 4
+      }
+    },
+    {
+      "id": "ach-all-roadmaps",
+      "title": "???",
+      "description": "Active on both roadmaps in the same week.",
+      "category": "hidden",
+      "rarity": "epic",
+      "roadmapScope": "any",
+      "icon": "layers",
+      "xpReward": 300,
+      "hidden": true,
+      "criteria": {
+        "type": "multi-roadmap-week"
+      }
+    },
+    {
+      "id": "ach-first-retro",
+      "title": "Introspector",
+      "description": "Completed your first weekly retrospective.",
+      "category": "consistency",
+      "rarity": "common",
+      "roadmapScope": "any",
+      "icon": "rotate-ccw",
+      "xpReward": 75,
+      "hidden": false,
+      "criteria": {
+        "type": "retrospectives",
+        "count": 1
+      }
+    },
+    {
+      "id": "ach-journal-7",
+      "title": "Daily Scribe",
+      "description": "Logged 7 consecutive daily reviews.",
+      "category": "consistency",
+      "rarity": "rare",
+      "roadmapScope": "any",
+      "icon": "edit-3",
+      "xpReward": 200,
+      "hidden": false,
+      "criteria": {
+        "type": "journal-streak",
+        "days": 7
+      }
+    },
+    {
+      "id": "ach-level-10",
+      "title": "Lvl 10 Reached",
+      "description": "Reached Level 10.",
+      "category": "progression",
+      "rarity": "rare",
+      "roadmapScope": "any",
+      "icon": "trending-up",
+      "xpReward": 250,
+      "hidden": false,
+      "criteria": {
+        "type": "level",
+        "level": 10
+      }
+    },
+    {
+      "id": "ach-level-25",
+      "title": "Elite",
+      "description": "Reached Level 25.",
+      "category": "progression",
+      "rarity": "epic",
+      "roadmapScope": "any",
+      "icon": "activity",
+      "xpReward": 500,
+      "hidden": false,
+      "criteria": {
+        "type": "level",
+        "level": 25
+      }
+    }
+  ]
+}
