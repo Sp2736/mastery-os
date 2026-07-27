@@ -22,7 +22,7 @@
           "id": "13",
           "title": "Roman to Integer",
           "url": "https://leetcode.com/problems/roman-to-integer/",
-          "completed": false
+          "completed": true
         },
         {
           "id": "258",
@@ -52,7 +52,7 @@
           "id": "231",
           "title": "Power of Two",
           "url": "https://leetcode.com/problems/power-of-two/",
-          "completed": true
+          "completed": false
         },
         {
           "id": "326",
