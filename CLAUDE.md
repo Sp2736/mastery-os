@@ -44,4 +44,4 @@ npx tsx scripts/parse-roadmaps.ts     # Reparse all markdown roadmaps to JSON
 
 ### Auth Gate & Security
 - **Console login**: Authenticates via `window.getAccess(userId)` which registers a secure SHA-256 signed HMAC session cookie `mastery_session`.
-- **Path Traversal Shield**: Paths are strictly constructed after checking `userId` against `['swayam', 'jalisa']`.
+- **Path Traversal Shield**: Paths are strictly constructed after checking `userId` against `'swayam'`.

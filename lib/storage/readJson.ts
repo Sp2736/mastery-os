@@ -24,6 +24,10 @@ export interface RoadmapNode {
   resources: string[];
   checkpoint: boolean;
   dayNumber?: number;
+  targetDate?: string;
+  originalDate?: string;
+  isRolledOver?: boolean;
+  daysOverdue?: number;
 }
 
 export interface RoadmapWeek {
@@ -255,8 +259,8 @@ export function getQuotes(): { quotes: QuoteEntry[] } {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-export function validateUserId(userId: string): asserts userId is 'swayam' | 'jalisa' {
-  if (userId !== 'swayam' && userId !== 'jalisa') {
+export function validateUserId(userId: string): asserts userId is 'swayam' {
+  if (userId !== 'swayam') {
     throw new Error('Invalid userId — path traversal prevented.');
   }
 }

@@ -2,6 +2,21 @@
 import { create } from 'zustand';
 import type { NodeProgress } from '@/lib/storage/readJson';
 
+export interface TaskItem {
+  id: string;
+  title: string;
+  track: string;
+  estimatedMinutes: number;
+  difficulty: 'easy' | 'medium' | 'hard';
+  roadmapId: string;
+  dependencies?: string[];
+  dayNumber?: number;
+  targetDate?: string;
+  originalDate?: string;
+  isRolledOver?: boolean;
+  daysOverdue?: number;
+}
+
 interface ProgressState {
   nodes: Record<string, NodeProgress>;
   streak: { current: number; longest: number; lastActiveDate: string | null };
@@ -37,6 +52,30 @@ export const useProgressStore = create<ProgressState>((set) => ({
       let newLevel = 1;
       while (Math.floor(100 * Math.pow(newLevel + 1, 1.5)) <= newTotal) newLevel++;
 
+      // Compute streak update
+      const today = new Date().toISOString().split('T')[0];
+      const yesterdayDate = new Date();
+      yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+      const yesterday = yesterdayDate.toISOString().split('T')[0];
+
+      let newStreak = { ...state.streak };
+      if (state.streak.lastActiveDate !== today) {
+        if (state.streak.lastActiveDate === yesterday) {
+          const current = state.streak.current + 1;
+          newStreak = {
+            current,
+            longest: Math.max(state.streak.longest, current),
+            lastActiveDate: today,
+          };
+        } else {
+          newStreak = {
+            current: 1,
+            longest: Math.max(state.streak.longest, 1),
+            lastActiveDate: today,
+          };
+        }
+      }
+
       return {
         nodes: {
           ...state.nodes,
@@ -47,6 +86,7 @@ export const useProgressStore = create<ProgressState>((set) => ({
             xpAwarded,
           } as NodeProgress,
         },
+        streak: newStreak,
         xp: { total: newTotal, level: newLevel },
         lastLevelUp: newLevel > prevLevel ? newLevel : state.lastLevelUp,
       };
@@ -54,3 +94,4 @@ export const useProgressStore = create<ProgressState>((set) => ({
 
   setLastLevelUp: (level) => set({ lastLevelUp: level }),
 }));
+

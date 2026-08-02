@@ -57,9 +57,9 @@ export default function SidebarNav({ userId }: { userId: string }) {
         })}
       </nav>
 
-      <div className="p-4 border-t border-white/5">
-        <div className="text-xs text-white/20 mb-3 font-mono tracking-wide">v1.0 · flat json · no db</div>
-        <LogoutButton />
+      <div className="p-4 border-t border-white/5 space-y-2">
+        <LogoutButton variant="full" />
+        <div className="text-[10px] text-white/20 font-mono tracking-wider text-center">v1.0 · flat json · no db</div>
       </div>
     </aside>
   );

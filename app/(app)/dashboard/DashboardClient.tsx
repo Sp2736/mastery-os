@@ -9,6 +9,7 @@ import ProgressRing from '@/components/dashboard/ProgressRing';
 import RoadmapSwitcher from '@/components/dashboard/RoadmapSwitcher';
 import TodaysTasks from '@/components/dashboard/TodaysTasks';
 import type { NodeProgress, UserProfile } from '@/lib/storage/readJson';
+import type { TaskItem } from '@/lib/store/progressStore';
 import { getTrackColor } from '@/lib/theme/trackPalette';
 
 interface DashboardData {
@@ -26,7 +27,7 @@ interface DashboardData {
   }>;
   blendedCompletion: number;
   trackStats: Record<string, { done: number; total: number; color: string; roadmapId: string }>;
-  todayTasks: Array<{ id: string; title: string; track: string; estimatedMinutes: number; difficulty: 'easy' | 'medium' | 'hard'; roadmapId: string; dependencies: string[] }>;
+  todayTasks: TaskItem[];
   completedNodeIds: Set<string>;
 }
 

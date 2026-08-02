@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { verifySession } from '@/lib/auth';
 import { getUserLeetCode, getUserProgress, getUserSettings, levelFromXP } from '@/lib/storage/readJson';
-import { writeUserJson } from '@/lib/storage/writeJson';
+import { writeUserJson, writeMultipleUserJson } from '@/lib/storage/writeJson';
 import { z } from 'zod';
 
 const patchSchema = z.object({
@@ -39,7 +39,6 @@ export async function PATCH(req: Request) {
   
   // Update the completion status
   leetcode.skills[skillIndex].problems[problemIndex].completed = completed;
-  await writeUserJson(session.userId, 'leetcode.json', leetcode);
 
   if (completed && !wasCompleted) {
     const progress = getUserProgress(session.userId);
@@ -72,7 +71,18 @@ export async function PATCH(req: Request) {
     progress.streak.lastActiveDate = today;
 
     progress.lastUpdated = new Date().toISOString();
-    await writeUserJson(session.userId, 'progress.json', progress);
+    
+    // Commit both leetcode and progress updates atomically in a single commit
+    await writeMultipleUserJson(
+      session.userId,
+      [
+        { filename: 'leetcode.json', data: leetcode },
+        { filename: 'progress.json', data: progress },
+      ],
+      `feat(leetcode): solve problem ${problemId} (+${xpAwarded} XP)`
+    );
+  } else {
+    await writeUserJson(session.userId, 'leetcode.json', leetcode);
   }
 
   return NextResponse.json({ success: true, leetcode });

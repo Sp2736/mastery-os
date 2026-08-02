@@ -6,12 +6,15 @@ import { getUserProgress } from '@/lib/storage/readJson';
 import { redirect } from 'next/navigation';
 import TopBarXP from '@/components/TopBarXP';
 import SidebarNav from '@/components/SidebarNav';
+import TopBarQuote from '@/components/TopBarQuote';
 import { getDailyQuote } from '@/lib/quotes/getDailyQuote';
-import QuoteSplashScreen from '@/components/QuoteSplashScreen';
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const session = await verifySession();
-  if (!session) redirect('/');
+  if (!session || !session.userId) {
+    redirect('/');
+    return null;
+  }
 
   const progress = getUserProgress(session.userId);
   const dailyQuote = getDailyQuote();
@@ -24,10 +27,9 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Top bar */}
-        <header className="h-16 border-b border-white/5 bg-[#08090c]/80 backdrop-blur-md flex items-center justify-between px-6 z-10 shrink-0">
-          <div className="flex items-center gap-4">
-            {/* Daily motivational quote splash screen and topbar morph */}
-            <QuoteSplashScreen quote={dailyQuote} />
+        <header className="h-16 border-b border-white/5 bg-[#08090c]/80 backdrop-blur-md flex items-center justify-between px-6 z-10 shrink-0 gap-4">
+          <div className="flex items-center gap-4 min-w-0 flex-1">
+            <TopBarQuote quote={dailyQuote} />
           </div>
           <TopBarXP initialXP={progress.xp.total} initialLevel={progress.xp.level} />
         </header>

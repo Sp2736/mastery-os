@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Clock, Zap, Lock } from 'lucide-react';
+import { Check, Clock, Zap, Lock, History, AlertCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useProgressStore } from '@/lib/store/progressStore';
+import { useProgressStore, type TaskItem } from '@/lib/store/progressStore';
 import { easings } from '@/lib/motion/easings';
 
 const DIFFICULTY_DOTS = {
@@ -29,18 +29,8 @@ const TRACK_COLORS: Record<string, string> = {
   'Solo Build': '#f59e0b',
 };
 
-interface TaskNode {
-  id: string;
-  title: string;
-  track: string;
-  estimatedMinutes: number;
-  difficulty: 'easy' | 'medium' | 'hard';
-  roadmapId: string;
-  dependencies?: string[];
-}
-
 interface TodaysTasksProps {
-  tasks: TaskNode[];
+  tasks: TaskItem[];
   completedNodeIds: Set<string>;
 }
 
@@ -50,7 +40,7 @@ export default function TodaysTasks({ tasks, completedNodeIds }: TodaysTasksProp
   const [completing, setCompleting] = useState<string | null>(null);
   const [showParticles, setShowParticles] = useState<string | null>(null);
 
-  const handleComplete = async (task: TaskNode) => {
+  const handleComplete = async (task: TaskItem) => {
     if (completing || nodes[task.id]?.status === 'completed') return;
 
     setCompleting(task.id);
@@ -80,46 +70,71 @@ export default function TodaysTasks({ tasks, completedNodeIds }: TodaysTasksProp
     }
   };
 
-  const isLocked = (task: TaskNode) =>
+  const isLocked = (task: TaskItem) =>
     task.dependencies?.some(dep => nodes[dep]?.status !== 'completed') ?? false;
 
-  if (tasks.length === 0) {
+  // Sorting Priority:
+  // 1. Incomplete Rolled-over/overdue tasks (sorted by days overdue desc)
+  // 2. Incomplete Today's tasks
+  // 3. Completed tasks (at the bottom)
+  const sortedTasks = [...tasks].sort((a, b) => {
+    const aCompleted = nodes[a.id]?.status === 'completed' || completedNodeIds.has(a.id);
+    const bCompleted = nodes[b.id]?.status === 'completed' || completedNodeIds.has(b.id);
+
+    if (aCompleted && !bCompleted) return 1;
+    if (!aCompleted && bCompleted) return -1;
+
+    if (!aCompleted && !bCompleted) {
+      if (a.isRolledOver && !b.isRolledOver) return -1;
+      if (!a.isRolledOver && b.isRolledOver) return 1;
+      if (a.isRolledOver && b.isRolledOver) {
+        return (b.daysOverdue ?? 0) - (a.daysOverdue ?? 0);
+      }
+    }
+    return 0;
+  });
+
+  if (sortedTasks.length === 0) {
     return (
       <div className="text-center py-16">
         <div className="text-5xl mb-4">🎯</div>
         <p className="text-white/60 font-medium">All tasks complete for today!</p>
-        <p className="text-white/40 text-sm mt-1">Come back tomorrow or mark extra nodes.</p>
+        <p className="text-white/40 text-sm mt-1">Come back tomorrow or mark extra nodes in your roadmaps.</p>
       </div>
     );
   }
 
   return (
     <div className="space-y-3">
-      {tasks.map((task, i) => {
+      {sortedTasks.map((task, i) => {
         const isCompleted = nodes[task.id]?.status === 'completed' || completedNodeIds.has(task.id);
         const locked = !isCompleted && isLocked(task);
         const trackColor = TRACK_COLORS[task.track] || '#f59e0b';
         const dots = DIFFICULTY_DOTS[task.difficulty] ?? 1;
+        const isOverdue = task.isRolledOver && !isCompleted;
 
         return (
           <motion.div
             key={task.id}
+            layout="position"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: i * 0.05, ease: easings.easeOutExpo as any }}
+            transition={{ duration: 0.3, delay: i * 0.04, ease: easings.easeOutExpo as any }}
             className={`relative flex items-center gap-4 p-4 rounded-[14px] border transition-all group ${
               isCompleted
                 ? 'bg-white/5 border-white/5 opacity-60'
                 : locked
                 ? 'bg-white/3 border-white/5 opacity-50 cursor-not-allowed'
+                : isOverdue
+                ? 'bg-[#151214]/80 border-amber-500/30 hover:border-amber-500/50 hover:bg-[#1a1519] shadow-[0_0_15px_rgba(245,158,11,0.05)] cursor-pointer'
                 : 'bg-[#101319]/60 border-white/8 hover:border-white/15 hover:bg-white/5 cursor-pointer'
             }`}
             onClick={() => !isCompleted && !locked && handleComplete(task)}
           >
             {/* Track color strip */}
             <div
-              className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full"
-              style={{ backgroundColor: trackColor }}
+              className={`absolute left-0 top-2 bottom-2 w-0.5 rounded-full ${isOverdue ? 'shadow-[0_0_8px_rgba(245,158,11,0.6)]' : ''}`}
+              style={{ backgroundColor: isOverdue ? '#f59e0b' : trackColor }}
             />
 
             {/* Checkbox */}
@@ -158,6 +173,8 @@ export default function TodaysTasks({ tasks, completedNodeIds }: TodaysTasksProp
                     ? 'border-transparent'
                     : locked
                     ? 'border-white/20'
+                    : isOverdue
+                    ? 'border-amber-400/50 group-hover:border-amber-400'
                     : 'border-white/30 group-hover:border-amber-500'
                 }`}
                 style={{ backgroundColor: isCompleted ? trackColor : 'transparent' }}
@@ -184,10 +201,18 @@ export default function TodaysTasks({ tasks, completedNodeIds }: TodaysTasksProp
 
             {/* Title + metadata */}
             <div className="flex-1 min-w-0">
-              <p className={`font-medium truncate ${isCompleted ? 'line-through text-white/40' : 'text-white/90'}`}>
-                {task.title}
-              </p>
-              <div className="flex items-center gap-3 mt-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <p className={`font-medium truncate ${isCompleted ? 'line-through text-white/40' : 'text-white/90'}`}>
+                  {task.title}
+                </p>
+                {isOverdue && (
+                  <span className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-md font-semibold tracking-wide bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                    <History className="w-2.5 h-2.5" />
+                    Extended {task.daysOverdue ? `(+${task.daysOverdue}d)` : ''}
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center gap-3 mt-1.5 flex-wrap">
                 <span
                   className="text-xs px-2 py-0.5 rounded-full font-medium"
                   style={{ backgroundColor: `${trackColor}20`, color: trackColor }}
@@ -208,6 +233,12 @@ export default function TodaysTasks({ tasks, completedNodeIds }: TodaysTasksProp
                     />
                   ))}
                 </span>
+                {task.originalDate && isOverdue && (
+                  <span className="text-[11px] text-amber-400/60 flex items-center gap-1 font-mono">
+                    <AlertCircle className="w-2.5 h-2.5 text-amber-400/80" />
+                    Originally: {task.originalDate}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -224,3 +255,4 @@ export default function TodaysTasks({ tasks, completedNodeIds }: TodaysTasksProp
     </div>
   );
 }
+

@@ -13,9 +13,9 @@ What to do in case of another user? They would want the commits to their profile
    - `app/api/auth/session/route.ts` (in the `z.enum([...])` validation array)
 
 3. **Initialize Your Data Directory**
-   - Copy the existing `data/users/jalisa` (or `swayam`) folder.
+   - Copy the existing `data/users/swayam` folder.
    - Rename the copied folder to your exact username (e.g., `data/users/johndoe`).
-   - Open every `.json` file inside your new folder and change the `"userId"` field from `"jalisa"` to your username.
+   - Open every `.json` file inside your new folder and change the `"userId"` field to your username.
 
 4. **Generate a GitHub Personal Access Token (PAT)**
    - Go to your GitHub Settings -> Developer settings -> Personal access tokens -> Fine-grained tokens.

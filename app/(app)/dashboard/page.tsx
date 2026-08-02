@@ -6,6 +6,7 @@ import {
   getUserProgress, getUserProfile, getAllRoadmaps, getUserSessions,
 } from '@/lib/storage/readJson';
 import { roadmapCompletion, predictFinishDate, computeMasteryScore } from '@/lib/scoring/masteryScore';
+import { calculateTodayTasks } from '@/lib/storage/dateShift';
 import DashboardClient from './DashboardClient';
 
 export default async function DashboardPage() {
@@ -18,37 +19,12 @@ export default async function DashboardPage() {
   const roadmaps = getAllRoadmaps();
   const sessions = getUserSessions(userId);
 
-  // Build today's tasks from roadmap position
+  // Build today's tasks from roadmap position with dynamic rollover and date cascading
   const startDate = profile.roadmapStartDates?.['6month-mastery'] || '2026-07-26';
-  const startDateWebDev = profile.roadmapStartDates?.['webdev-8week'] || '2026-07-26';
-  const todayOffset6 = Math.floor((Date.now() - new Date(startDate).getTime()) / 86_400_000);
-  const todayOffsetW = Math.floor((Date.now() - new Date(startDateWebDev).getTime()) / 86_400_000);
+  const todayStr = new Date().toISOString().split('T')[0];
 
-  const todayTasks: Array<{
-    id: string; title: string; track: string; estimatedMinutes: number;
-    difficulty: 'easy' | 'medium' | 'hard'; roadmapId: string; dependencies: string[];
-  }> = [];
-
-  for (const roadmap of roadmaps) {
-    const offset = roadmap.id === '6month-mastery' ? todayOffset6 : todayOffsetW;
-    const weekIdx = Math.floor(offset / 7);
-    const dayIdx = offset % 7;
-
-    let nodeIdx = 0;
-    outer: for (const phase of roadmap.phases) {
-      for (const week of phase.weeks) {
-        for (const node of week.nodes) {
-          if (nodeIdx === weekIdx * 7 + dayIdx) {
-            if (progress.nodes[node.id]?.status !== 'completed') {
-              todayTasks.push({ ...node, roadmapId: roadmap.id });
-            }
-            break outer;
-          }
-          nodeIdx++;
-        }
-      }
-    }
-  }
+  // Build today's tasks from roadmap position with dynamic rollover and date cascading
+  const { todayTasks } = calculateTodayTasks(profile, progress, roadmaps, todayStr);
 
   // Stats
   const daysActive = new Set(sessions.sessions.map(s => s.date.split('T')[0])).size;

@@ -23,11 +23,11 @@ You are an autonomous coding assistant developing and maintaining **Mastery OS**
 * **Rule**: Do not add standard visible input login forms, passwords, or OAuth integrations.
 * **Mechanism**:
   * The user interface must present an "Access Denied" shield (unmounted real dashboard components) until authenticated.
-  * Authentication is performed strictly via the browser developer console by calling `window.getAccess('swayam')` or `window.getAccess('jalisa')`.
+  * Authentication is performed strictly via the browser developer console by calling `window.getAccess('swayam')`.
   * The gate provider client-side must trigger a POST request to `/api/auth/session` to issue a signed secure cookie (`mastery_session`) signed with SHA-256 HMAC utilizing `SESSION_SECRET`.
   * Middleware (`middleware.ts`) must enforce auth for `/(app)` and `/api/**` (except `/api/auth/session` and public endpoints).
   * Private endpoints must derive user context *only* from the session cookie, never URL or request parameters.
-  * File paths in `lib/storage/` must validate `userId` against the enum `['swayam', 'jalisa']` before constructing any paths.
+  * File paths in `lib/storage/` must validate `userId` against `'swayam'` before constructing any paths.
 
 ## 📊 Rule 3: Roadmap Parser Integrity & Stable IDs
 * **Rule**: Replacing or updating `.md` source roadmaps in `/data/roadmap-sources/` must be idempotent and must never orphan or duplicate user progress.
