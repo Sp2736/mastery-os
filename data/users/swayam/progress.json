@@ -8,17 +8,25 @@
       "xpAwarded": 20,
       "confidence": 4,
       "notes": "Completed 3/41 LeetCode problems for vectors."
+    },
+    "node-b011561371": {
+      "status": "completed",
+      "completedAt": "2026-08-05T18:15:37.928Z",
+      "timeSpentMinutes": 35,
+      "xpAwarded": 40,
+      "confidence": 3,
+      "notes": ""
     }
   },
   "streak": {
     "current": 1,
     "longest": 0,
-    "lastActiveDate": "2026-07-27"
+    "lastActiveDate": "2026-08-05"
   },
   "xp": {
-    "total": 700,
+    "total": 740,
     "level": 3
   },
   "archived": [],
-  "lastUpdated": "2026-07-27T20:55:20.329Z"
+  "lastUpdated": "2026-08-05T18:15:37.928Z"
 }
