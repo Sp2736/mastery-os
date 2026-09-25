@@ -13,13 +13,7 @@ interface LeetcodeClientProps {
 export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
   const router = useRouter();
   const [data, setData] = useState(initialData);
-  const [expandedSkills, setExpandedSkills] = useState<Record<string, boolean>>(() => {
-    const acc: Record<string, boolean> = {};
-    // By default, let's only expand the first few if we have a lot, or keep all expanded if not filtering.
-    // For 41 skills, expanding all by default makes the page huge. Let's start with all collapsed except first.
-    initialData.skills.forEach((s, i) => acc[s.id] = i === 0);
-    return acc;
-  });
+  const [expandedSkills, setExpandedSkills] = useState<Record<string, boolean>>({});
 
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'completed' | 'incomplete'>('all');
