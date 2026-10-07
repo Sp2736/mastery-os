@@ -39,6 +39,8 @@ export async function PATCH(req: Request) {
   
   // Update the completion status
   leetcode.skills[skillIndex].problems[problemIndex].completed = completed;
+  if (completed) leetcode.skills[skillIndex].problems[problemIndex].completedAt = new Date().toISOString();
+  else delete leetcode.skills[skillIndex].problems[problemIndex].completedAt;
 
   if (completed && !wasCompleted) {
     const progress = getUserProgress(session.userId);

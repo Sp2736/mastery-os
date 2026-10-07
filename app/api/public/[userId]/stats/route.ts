@@ -31,36 +31,37 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ use
     completedProblems: number;
     previewProblems: { id: string; title: string; url: string; completed: boolean }[];
     othersCount: number;
-    lastCompletedIndex: number; // for sorting
+    lastCompletedAt: number; // for sorting skills
   }[] = [];
 
   try {
     const lc = getUserLeetCode(userId);
-    allSkills = lc.skills.map((skill, skillIndex) => {
+    allSkills = lc.skills.map((skill) => {
       const total = skill.problems.length;
-      const completed = skill.problems.filter((p) => p.completed);
       
-      // We want the most recent 3 completed problems, or if none, the first 3 uncompleted.
-      // Assuming they are done in order, the last ones in the completed list are recent.
-      const recentCompleted = completed.slice(-3).reverse(); 
-      let preview = recentCompleted.map((p) => ({
+      // Sort problems by completedAt (most recent first)
+      const sortedProblems = [...skill.problems].sort((a, b) => {
+        if (a.completed && b.completed) {
+          const timeA = a.completedAt ? new Date(a.completedAt).getTime() : 0;
+          const timeB = b.completedAt ? new Date(b.completedAt).getTime() : 0;
+          return timeB - timeA; // most recent first
+        }
+        if (a.completed) return -1;
+        if (b.completed) return 1;
+        return 0; // neither completed
+      });
+
+      const completed = skill.problems.filter((p) => p.completed);
+      const mostRecentTime = completed.length > 0 
+        ? Math.max(...completed.map(p => p.completedAt ? new Date(p.completedAt).getTime() : 0))
+        : 0;
+      
+      const preview = sortedProblems.slice(0, 3).map((p) => ({
         id: p.id,
         title: p.title,
         url: p.url,
         completed: p.completed,
       }));
-
-      // If we don't have 3 completed, fill with uncompleted
-      if (preview.length < 3) {
-        const uncompleted = skill.problems.filter((p) => !p.completed);
-        const needed = 3 - preview.length;
-        preview = [
-          ...preview,
-          ...uncompleted.slice(0, needed).map(p => ({
-            id: p.id, title: p.title, url: p.url, completed: p.completed
-          }))
-        ];
-      }
 
       return {
         id: skill.id,
@@ -70,16 +71,15 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ use
         completedProblems: completed.length,
         previewProblems: preview,
         othersCount: Math.max(0, total - 3),
-        lastCompletedIndex: skillIndex, 
+        lastCompletedAt: mostRecentTime, 
       };
     });
   } catch { /* no leetcode data yet */ }
 
   // We want to showcase the topics the user is currently working on.
-  // We can filter those with completedProblems > 0, and sort them descending by their index 
-  // (so Part 3 comes before Part 0, as it's more recent).
+  // Sort them descending by their most recent completion timestamp.
   let activeSkills = allSkills.filter(s => s.completedProblems > 0);
-  activeSkills.sort((a, b) => b.lastCompletedIndex - a.lastCompletedIndex);
+  activeSkills.sort((a, b) => b.lastCompletedAt - a.lastCompletedAt);
 
   const SHOWCASE_LIMIT = 5;
   const showcasedSkills = activeSkills.slice(0, SHOWCASE_LIMIT);
