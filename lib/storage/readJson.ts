@@ -311,6 +311,7 @@ export interface LeetCodeProblem {
   title: string;
   url: string;
   completed: boolean;
+  completedAt?: string;
 }
 
 export interface LeetCodeSkill {
