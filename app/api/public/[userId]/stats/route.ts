@@ -2,13 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import {
   getUserProgress,
   getUserSettings,
-  getUserProfile,
-  getUserAchievements,
-  getAchievementDefinitions,
-  getAllRoadmaps,
+  getUserLeetCode,
   validateUserId,
 } from '@/lib/storage/readJson';
-import { roadmapCompletion } from '@/lib/scoring/masteryScore';
 
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params;
@@ -25,68 +21,55 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ use
   }
 
   const progress = getUserProgress(userId);
-  const profile = getUserProfile(userId);
-  const roadmaps = getAllRoadmaps();
 
-  const roadmapStats = roadmaps.map((r) => {
-    const done = r.phases
-      .flatMap((p) => p.weeks.flatMap((w) => w.nodes))
-      .filter((n) => progress.nodes[n.id]?.status === 'completed').length;
-    return {
-      id: r.id,
-      title: r.title,
-      color: r.color,
-      totalNodes: r.totalNodes,
-      completedNodes: done,
-      pct: Math.round(roadmapCompletion(progress, r) * 10) / 10,
-    };
-  });
+  // --- LeetCode skills ---
+  let allSkills: {
+    id: string;
+    title: string;
+    track: string;
+    totalProblems: number;
+    completedProblems: number;
+    previewProblems: { id: string; title: string; url: string; completed: boolean }[];
+    othersCount: number;
+  }[] = [];
 
-  const totalNodes = roadmaps.reduce((s, r) => s + r.totalNodes, 0);
-  const blendedPct =
-    totalNodes > 0
-      ? Math.round(
-          (roadmaps.reduce((acc, r) => acc + roadmapCompletion(progress, r) * r.totalNodes, 0) / totalNodes) * 10
-        ) / 10
-      : 0;
-
-  let recentAchievements: { id: string; title: string; rarity: string; xpReward: number; unlockedAt: string }[] = [];
   try {
-    const achData = getUserAchievements(userId);
-    const defs = getAchievementDefinitions().achievements;
-    recentAchievements = achData.unlocked
-      .sort((a, b) => new Date(b.unlockedAt).getTime() - new Date(a.unlockedAt).getTime())
-      .slice(0, 5)
-      .map((u) => {
-        const def = defs.find((d) => d.id === u.id);
-        return def
-          ? { id: u.id, title: def.title, rarity: def.rarity, xpReward: def.xpReward, unlockedAt: u.unlockedAt }
-          : null;
-      })
-      .filter(Boolean) as { id: string; title: string; rarity: string; xpReward: number; unlockedAt: string }[];
-  } catch { /* no achievements yet */ }
+    const lc = getUserLeetCode(userId);
+    allSkills = lc.skills.map((skill) => {
+      const total = skill.problems.length;
+      const completed = skill.problems.filter((p) => p.completed).length;
+      const preview = skill.problems.slice(0, 3).map((p) => ({
+        id: p.id,
+        title: p.title,
+        url: p.url,
+        completed: p.completed,
+      }));
+      return {
+        id: skill.id,
+        title: skill.title,
+        track: skill.track,
+        totalProblems: total,
+        completedProblems: completed,
+        previewProblems: preview,
+        othersCount: Math.max(0, total - 3),
+      };
+    });
+  } catch { /* no leetcode data yet */ }
 
-  const totalCompleted = Object.values(progress.nodes).filter((n) => n.status === 'completed').length;
-
-  const activityMap: Record<string, number> = {};
-  Object.values(progress.nodes).forEach((node) => {
-    if (node.status === 'completed' && node.completedAt) {
-      const date = node.completedAt.split('T')[0];
-      activityMap[date] = (activityMap[date] || 0) + 1;
-    }
-  });
+  const SHOWCASE_LIMIT = 5;
+  const showcasedSkills = allSkills.slice(0, SHOWCASE_LIMIT);
+  const andMoreCount = Math.max(0, allSkills.length - SHOWCASE_LIMIT);
 
   return NextResponse.json({
-    userId,
-    displayName: profile.displayName,
-    level: progress.xp.level,
-    totalXp: progress.xp.total,
-    streak: { current: progress.streak.current, longest: progress.streak.longest },
-    totalCompleted,
-    blendedCompletion: blendedPct,
-    roadmaps: roadmapStats,
-    recentAchievements,
-    activityMap,
+    streak: {
+      current: progress.streak.current,
+      longest: progress.streak.longest,
+    },
+    leetcode: {
+      skills: showcasedSkills,
+      andMoreCount,
+      totalSkills: allSkills.length,
+    },
     lastUpdated: progress.lastUpdated,
   }, {
     headers: {
