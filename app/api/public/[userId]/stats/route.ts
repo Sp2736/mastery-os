@@ -31,34 +31,67 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ use
     completedProblems: number;
     previewProblems: { id: string; title: string; url: string; completed: boolean }[];
     othersCount: number;
+    lastCompletedIndex: number; // for sorting
   }[] = [];
 
   try {
     const lc = getUserLeetCode(userId);
-    allSkills = lc.skills.map((skill) => {
+    allSkills = lc.skills.map((skill, skillIndex) => {
       const total = skill.problems.length;
-      const completed = skill.problems.filter((p) => p.completed).length;
-      const preview = skill.problems.slice(0, 3).map((p) => ({
+      const completed = skill.problems.filter((p) => p.completed);
+      
+      // We want the most recent 3 completed problems, or if none, the first 3 uncompleted.
+      // Assuming they are done in order, the last ones in the completed list are recent.
+      const recentCompleted = completed.slice(-3).reverse(); 
+      let preview = recentCompleted.map((p) => ({
         id: p.id,
         title: p.title,
         url: p.url,
         completed: p.completed,
       }));
+
+      // If we don't have 3 completed, fill with uncompleted
+      if (preview.length < 3) {
+        const uncompleted = skill.problems.filter((p) => !p.completed);
+        const needed = 3 - preview.length;
+        preview = [
+          ...preview,
+          ...uncompleted.slice(0, needed).map(p => ({
+            id: p.id, title: p.title, url: p.url, completed: p.completed
+          }))
+        ];
+      }
+
       return {
         id: skill.id,
         title: skill.title,
         track: skill.track,
         totalProblems: total,
-        completedProblems: completed,
+        completedProblems: completed.length,
         previewProblems: preview,
         othersCount: Math.max(0, total - 3),
+        lastCompletedIndex: skillIndex, 
       };
     });
   } catch { /* no leetcode data yet */ }
 
+  // We want to showcase the topics the user is currently working on.
+  // We can filter those with completedProblems > 0, and sort them descending by their index 
+  // (so Part 3 comes before Part 0, as it's more recent).
+  let activeSkills = allSkills.filter(s => s.completedProblems > 0);
+  activeSkills.sort((a, b) => b.lastCompletedIndex - a.lastCompletedIndex);
+
   const SHOWCASE_LIMIT = 5;
-  const showcasedSkills = allSkills.slice(0, SHOWCASE_LIMIT);
-  const andMoreCount = Math.max(0, allSkills.length - SHOWCASE_LIMIT);
+  const showcasedSkills = activeSkills.slice(0, SHOWCASE_LIMIT);
+  
+  // If we don't have 5 active skills, fill with next uncompleted ones
+  if (showcasedSkills.length < SHOWCASE_LIMIT) {
+     const unstarted = allSkills.filter(s => s.completedProblems === 0);
+     const needed = SHOWCASE_LIMIT - showcasedSkills.length;
+     showcasedSkills.push(...unstarted.slice(0, needed));
+  }
+
+  const andMoreCount = Math.max(0, allSkills.length - showcasedSkills.length);
 
   return NextResponse.json({
     streak: {
