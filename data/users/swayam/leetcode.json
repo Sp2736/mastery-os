@@ -330,7 +330,8 @@
           "id": "1672",
           "title": "Richest Customer Wealth",
           "url": "https://leetcode.com/problems/richest-customer-wealth/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-10-08T12:43:06.460Z"
         },
         {
           "id": "2114",
