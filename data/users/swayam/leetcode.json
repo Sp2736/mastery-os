@@ -356,7 +356,8 @@
           "id": "26",
           "title": "Remove Duplicates from Sorted Array",
           "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-10-08T12:56:24.753Z"
         },
         {
           "id": "88",
