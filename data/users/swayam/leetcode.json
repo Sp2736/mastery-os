@@ -337,7 +337,8 @@
           "id": "2114",
           "title": "Maximum Number of Words Found in Sentences",
           "url": "https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-10-09T07:22:55.373Z"
         },
         {
           "id": "2011",
