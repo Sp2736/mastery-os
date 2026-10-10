@@ -607,7 +607,8 @@
           "id": "14",
           "title": "Longest Common Prefix",
           "url": "https://leetcode.com/problems/longest-common-prefix/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-10-10T15:25:55.186Z"
         },
         {
           "id": "151",
