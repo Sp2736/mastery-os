@@ -621,7 +621,8 @@
           "id": "443",
           "title": "String Compression",
           "url": "https://leetcode.com/problems/string-compression/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-10-10T15:46:22.257Z"
         },
         {
           "id": "205",
