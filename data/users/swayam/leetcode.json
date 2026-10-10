@@ -586,7 +586,8 @@
           "id": "1678",
           "title": "Goal Parser Interpretation",
           "url": "https://leetcode.com/problems/goal-parser-interpretation/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-10-10T09:25:16.671Z"
         },
         {
           "id": "242",
