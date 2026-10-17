@@ -383,7 +383,8 @@
           "id": "1089",
           "title": "Duplicate Zeros",
           "url": "https://leetcode.com/problems/duplicate-zeros/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-10-17T05:20:12.048Z"
         },
         {
           "id": "1299",
