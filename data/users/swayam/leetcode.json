@@ -365,7 +365,8 @@
           "id": "88",
           "title": "Merge Sorted Array",
           "url": "https://leetcode.com/problems/merge-sorted-array/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-10-23T13:56:39.966Z"
         },
         {
           "id": "283",
