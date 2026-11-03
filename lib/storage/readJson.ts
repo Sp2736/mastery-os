@@ -3,12 +3,34 @@ import path from 'path';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 
+/**
+ * In demo mode (NEXT_PUBLIC_DEMO_MODE=true), when a file is requested for
+ * demo_user we transparently fall back to reading the `swayam` template so
+ * the server always has something to return.  All mutations are handled on the
+ * client via sessionStorage and never reach the filesystem.
+ */
+const IS_DEMO = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+
 function readJsonFile<T>(relativePath: string): T {
-  const filePath = path.join(DATA_DIR, relativePath);
+  // For demo_user, transparently read the swayam template file.
+  const resolvedPath = IS_DEMO
+    ? relativePath.replace(/^users\/demo_user\//, 'users/swayam/')
+    : relativePath;
+
+  const filePath = path.join(DATA_DIR, resolvedPath);
   if (!fs.existsSync(filePath)) {
-    throw new Error(`Data file not found: ${relativePath}`);
+    throw new Error(`Data file not found: ${resolvedPath}`);
   }
-  return JSON.parse(fs.readFileSync(filePath, 'utf-8')) as T;
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as T;
+
+  // Rewrite the userId field so the client sees demo_user, not swayam
+  if (IS_DEMO && relativePath.startsWith('users/demo_user/')) {
+    if (typeof (data as any).userId === 'string') {
+      (data as any).userId = 'demo_user';
+    }
+  }
+
+  return data;
 }
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
@@ -259,8 +281,8 @@ export function getQuotes(): { quotes: QuoteEntry[] } {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-export function validateUserId(userId: string): asserts userId is 'swayam' {
-  if (userId !== 'swayam') {
+export function validateUserId(userId: string): asserts userId is 'swayam' | 'demo_user' {
+  if (userId !== 'swayam' && userId !== 'demo_user') {
     throw new Error('Invalid userId — path traversal prevented.');
   }
 }

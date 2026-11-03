@@ -2,6 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import { Octokit } from 'octokit';
 
+// ─── Demo mode ─────────────────────────────────────────────────────────────
+// In demo mode all writes are handled client-side via sessionStorage.
+// Server-side write functions become no-ops so API routes remain importable
+// without throwing during a static/demo build.
+const IS_DEMO = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+
 // Module-level singleton: reused across calls within the same warm Vercel instance.
 // Lazy-initialised so it is only created when a production write actually happens.
 let _octokit: Octokit | null = null;
@@ -23,11 +29,13 @@ export interface BatchWriteItem<T = any> {
  * Writes multiple JSON files to the /data directory.
  * In development, writes directly to the local filesystem.
  * In production (Vercel), commits all files to GitHub in a SINGLE atomic commit.
+ * In demo mode, this is a no-op — writes are intercepted client-side.
  */
 export async function writeBatchJson(
   files: BatchWriteItem[],
   commitMessage?: string
 ): Promise<void> {
+  if (IS_DEMO) return; // demo: sessionStorage handles writes client-side
   if (files.length === 0) return;
 
   const isProd = process.env.NODE_ENV === 'production';
@@ -110,8 +118,10 @@ export async function writeBatchJson(
  * Writes a JSON file to the /data directory.
  * In development, writes directly to the local filesystem.
  * In production (Vercel), commits the file to GitHub using the REST API.
+ * In demo mode, this is a no-op — writes are intercepted client-side.
  */
 export async function writeJson<T>(relativePath: string, data: T): Promise<void> {
+  if (IS_DEMO) return; // demo: sessionStorage handles writes client-side
   const isProd = process.env.NODE_ENV === 'production';
   const filePath = path.join(process.cwd(), 'data', relativePath);
   const jsonString = JSON.stringify(data, null, 2);
@@ -162,9 +172,10 @@ export async function writeJson<T>(relativePath: string, data: T): Promise<void>
  * Helper to write a user-specific JSON file securely.
  */
 export async function writeUserJson<T>(userId: string, filename: string, data: T): Promise<void> {
-  if (userId !== 'swayam') {
+  if (userId !== 'swayam' && userId !== 'demo_user') {
     throw new Error('Invalid user ID. Path traversal prevented.');
   }
+  if (IS_DEMO) return; // demo: sessionStorage handles writes client-side
   return writeJson<T>(`users/${userId}/${filename}`, data);
 }
 
@@ -176,12 +187,12 @@ export async function writeMultipleUserJson(
   files: Array<{ filename: string; data: any }>,
   commitMessage?: string
 ): Promise<void> {
-  if (userId !== 'swayam') {
+  if (userId !== 'swayam' && userId !== 'demo_user') {
     throw new Error('Invalid user ID. Path traversal prevented.');
   }
+  if (IS_DEMO) return; // demo: sessionStorage handles writes client-side
   return writeBatchJson(
     files.map((f) => ({ relativePath: `users/${userId}/${f.filename}`, data: f.data })),
     commitMessage || `chore(user): batch update ${userId} [${files.map((f) => f.filename).join(', ')}] — ${new Date().toISOString()}`
   );
 }
-

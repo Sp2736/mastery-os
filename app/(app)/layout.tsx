@@ -1,6 +1,4 @@
 import { ReactNode } from 'react';
-import Link from 'next/link';
-import { Home, Compass, Edit3, RotateCcw, BarChart2, Network, Settings } from 'lucide-react';
 import { verifySession } from '@/lib/auth';
 import { getUserProgress } from '@/lib/storage/readJson';
 import { redirect } from 'next/navigation';
@@ -9,8 +7,25 @@ import SidebarNav from '@/components/SidebarNav';
 import TopBarQuote from '@/components/TopBarQuote';
 import { getDailyQuote } from '@/lib/quotes/getDailyQuote';
 
+// Demo-only components — tree-shaken away in non-demo builds
+const IS_DEMO = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+
+// Lazy import: only evaluated in demo builds to keep the bundle clean
+let DemoNotice: React.ComponentType | null = null;
+let DemoBootstrap: React.ComponentType | null = null;
+if (IS_DEMO) {
+  // We use require() here to avoid Next.js static analysis hoisting the import
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  DemoNotice = require('@/components/DemoNotice').default;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  DemoBootstrap = require('@/components/DemoBootstrap').default;
+}
+
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const session = await verifySession();
+
+  // In demo mode verifySession always returns the demo user, so this redirect
+  // is never triggered. In production it guards all /(app) routes as before.
   if (!session || !session.userId) {
     redirect('/');
     return null;
@@ -21,6 +36,12 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex h-screen bg-[#08090c] text-slate-300 font-sans">
+      {/* Demo bootstrap (seeds sessionStorage + installs fetch interceptor) */}
+      {IS_DEMO && DemoBootstrap && <DemoBootstrap />}
+
+      {/* Demo notice banner */}
+      {IS_DEMO && DemoNotice && <DemoNotice />}
+
       {/* Sidebar */}
       <SidebarNav userId={session.userId} />
 

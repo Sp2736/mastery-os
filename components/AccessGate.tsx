@@ -18,8 +18,12 @@ const DEFAULT_QUOTE: Quote = {
   category: "discipline",
 };
 
+const IS_DEMO = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+
 export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
-  const [status, setStatus] = useState<'denied' | 'authenticating' | 'granted'>('denied');
+  const [status, setStatus] = useState<'denied' | 'authenticating' | 'granted'>(
+    IS_DEMO ? 'granted' : 'denied'
+  );
   const [typedText, setTypedText] = useState('');
   const [typedAuthor, setTypedAuthor] = useState('');
   const [showAuthor, setShowAuthor] = useState(false);
@@ -50,7 +54,16 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
     }, 700);
   }, [router]);
 
+  // In demo mode, skip directly to dashboard after a brief moment
   useEffect(() => {
+    if (!IS_DEMO) return;
+    const t = setTimeout(() => proceedToDashboard(), 800);
+    return () => clearTimeout(t);
+  }, [proceedToDashboard]);
+
+  useEffect(() => {
+    if (IS_DEMO) return; // no console gate in demo
+
     // Expose the global function to the window object
     (window as any).getAccess = async (userId: string) => {
       const sanitized = userId?.toLowerCase().trim();
@@ -94,7 +107,7 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
 
   // Typewriter effect when access is granted
   useEffect(() => {
-    if (status !== 'granted' || isExiting) return;
+    if (status !== 'granted' || isExiting || IS_DEMO) return;
 
     let currentIndex = 0;
     const fullQuoteText = `"${quote.text}"`;
@@ -138,7 +151,7 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
 
   // Speech narration when access is granted
   useEffect(() => {
-    if (status !== 'granted' || isExiting || isMuted) {
+    if (status !== 'granted' || isExiting || isMuted || IS_DEMO) {
       if (stopSpeechRef.current) {
         stopSpeechRef.current();
         stopSpeechRef.current = null;
@@ -166,7 +179,7 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
 
   // Keyboard shortcut (Enter, Space, Escape) or click to skip directly to dashboard
   useEffect(() => {
-    if (status !== 'granted') return;
+    if (status !== 'granted' || IS_DEMO) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') {
         proceedToDashboard();
@@ -175,6 +188,22 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [status, proceedToDashboard]);
+
+  // In demo mode render a minimal transparent splash that dissolves immediately
+  if (IS_DEMO) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#08090c]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 0.6, 0] }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          className="font-mono text-xs tracking-widest text-amber-400/40 uppercase"
+        >
+          demo mode · auto-login
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div 

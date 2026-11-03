@@ -1,0 +1,58 @@
+﻿{
+    "userId":  "demo_user",
+    "nodes":  {
+                  "node-c638ac93ba":  {
+                                          "status":  "completed",
+                                          "completedAt":  "2026-07-26T10:00:00.000Z",
+                                          "timeSpentMinutes":  120,
+                                          "xpAwarded":  20,
+                                          "confidence":  4,
+                                          "notes":  "Completed 3/41 LeetCode problems for vectors."
+                                      },
+                  "node-b011561371":  {
+                                          "status":  "completed",
+                                          "completedAt":  "2026-08-05T18:15:37.928Z",
+                                          "timeSpentMinutes":  35,
+                                          "xpAwarded":  40,
+                                          "confidence":  3,
+                                          "notes":  ""
+                                      },
+                  "node-034f5900d9":  {
+                                          "status":  "completed",
+                                          "completedAt":  "2026-08-07T18:32:53.699Z",
+                                          "timeSpentMinutes":  35,
+                                          "xpAwarded":  40,
+                                          "confidence":  3,
+                                          "notes":  ""
+                                      },
+                  "node-d988de0a88":  {
+                                          "status":  "completed",
+                                          "completedAt":  "2026-08-07T18:33:54.190Z",
+                                          "timeSpentMinutes":  35,
+                                          "xpAwarded":  40,
+                                          "confidence":  3,
+                                          "notes":  ""
+                                      },
+                  "node-29a4a27256":  {
+                                          "status":  "completed",
+                                          "completedAt":  "2026-08-12T17:17:50.054Z",
+                                          "timeSpentMinutes":  35,
+                                          "xpAwarded":  40,
+                                          "confidence":  3,
+                                          "notes":  ""
+                                      }
+              },
+    "streak":  {
+                   "current":  1,
+                   "longest":  5,
+                   "lastActiveDate":  "2026-10-23"
+               },
+    "xp":  {
+               "total":  5560,
+               "level":  14
+           },
+    "archived":  [
+
+                 ],
+    "lastUpdated":  "2026-10-23T13:56:39.968Z"
+}

@@ -10,15 +10,18 @@ interface AuthState {
   setDenied: () => void;
 }
 
+const IS_DEMO = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+
 export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
-      status: 'denied',
-      userId: null,
-      displayName: null,
+      // In demo mode the store is pre-seeded with the demo user identity
+      status: IS_DEMO ? 'granted' : 'denied',
+      userId: IS_DEMO ? 'demo_user' : null,
+      displayName: IS_DEMO ? 'Demo User' : null,
       setGranted: (userId, displayName) => set({ status: 'granted', userId, displayName }),
       setDenied: () => set({ status: 'denied', userId: null, displayName: null }),
     }),
-    { name: 'mastery-auth' }
+    { name: IS_DEMO ? 'mastery-auth-demo' : 'mastery-auth' }
   )
 );
