@@ -1,42 +1,43 @@
 {
-    "name": "mastery-os",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "eslint",
-        "dev:demo": "cross-env NEXT_PUBLIC_DEMO_MODE=true next dev",
-        "build:demo": "cross-env NEXT_PUBLIC_DEMO_MODE=true next build"
-    },
-    "dependencies": {
-        "@vercel/og": "^0.11.1",
-        "@xyflow/react": "^12.11.2",
-        "clsx": "^2.1.1",
-        "dagre": "^0.8.5",
-        "framer-motion": "^12.42.2",
-        "jose": "^6.2.4",
-        "lucide-react": "^1.27.0",
-        "next": "16.2.12",
-        "octokit": "^5.0.5",
-        "react": "19.2.4",
-        "react-dom": "19.2.4",
-        "recharts": "^3.10.1",
-        "tailwind-merge": "^3.6.0",
-        "zod": "^4.4.3",
-        "zustand": "^5.0.14"
-    },
-    "devDependencies": {
-        "@tailwindcss/postcss": "^4",
-        "@types/dagre": "^0.7.54",
-        "@types/node": "^20",
-        "@types/react": "^19",
-        "@types/react-dom": "^19",
-        "cross-env": "^10.1.0",
-        "eslint": "^9",
-        "eslint-config-next": "16.2.12",
-        "tailwindcss": "^4",
-        "typescript": "^5"
-    }
+  "name": "mastery-os",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "dev:demo": "cross-env NEXT_PUBLIC_DEMO_MODE=true next dev",
+    "build:demo": "cross-env NEXT_PUBLIC_DEMO_MODE=true next build",
+    "build:pages": "node scripts/build-github-pages.js"
+  },
+  "dependencies": {
+    "@vercel/og": "^0.11.1",
+    "@xyflow/react": "^12.11.2",
+    "clsx": "^2.1.1",
+    "dagre": "^0.8.5",
+    "framer-motion": "^12.42.2",
+    "jose": "^6.2.4",
+    "lucide-react": "^1.27.0",
+    "next": "16.2.12",
+    "octokit": "^5.0.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "recharts": "^3.10.1",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/dagre": "^0.7.54",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.12",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }

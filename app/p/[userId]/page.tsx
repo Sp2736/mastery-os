@@ -3,6 +3,10 @@ import { notFound } from 'next/navigation';
 import { Shield } from 'lucide-react';
 import Image from 'next/image';
 
+export function generateStaticParams() {
+  return [{ userId: 'swayam' }, { userId: 'demo_user' }];
+}
+
 export default async function PublicProfile({ params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params;
   

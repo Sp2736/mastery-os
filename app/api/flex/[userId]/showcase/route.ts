@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getUserProgress, getUserSettings, getAllRoadmaps, validateUserId, getUserProfile } from '@/lib/storage/readJson';
 import { roadmapCompletion } from '@/lib/scoring/masteryScore';
 
+export const dynamic = 'force-static';
+export function generateStaticParams() {
+  return [{ userId: 'swayam' }, { userId: 'demo_user' }];
+}
+
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params;
   try { validateUserId(userId); } catch { return new NextResponse('Not found', { status: 404 }); }

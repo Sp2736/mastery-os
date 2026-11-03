@@ -1,4 +1,3 @@
-'use server';
 
 import { verifySession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
