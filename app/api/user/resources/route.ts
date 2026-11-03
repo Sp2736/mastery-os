@@ -42,3 +42,4 @@ export async function PATCH(req: Request) {
   await writeUserJson(session.userId, 'resources.json', data);
   return NextResponse.json({ success: true, resource: data.resources[index] });
 }
+

@@ -16,3 +16,4 @@ export default async function ArchitecturePage() {
 
   return <ArchitectureClient userId={session.userId} />;
 }
+

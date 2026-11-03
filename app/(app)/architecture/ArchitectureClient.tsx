@@ -414,3 +414,4 @@ export default function ArchitectureClient({ userId }: ArchitectureClientProps) 
     </article>
   );
 }
+
