@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, TrendingUp, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
+import { Calendar, TrendingUp, AlertTriangle, CheckCircle, Clock, Lock } from 'lucide-react';
+
+const IS_DEMO = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
 
 interface PrePopulated {
   weekNumber: number;
@@ -69,13 +71,15 @@ export default function RetroClient({ entries, prePopulated }: { entries: RetroE
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-white">Weekly Retrospective</h2>
-          <p className="text-white/40 text-sm mt-1">Week {prePopulated.weekNumber} · {prePopulated.weekStartDate}</p>
+          <p className="text-white/40 text-sm mt-1">Week {prePopulated.weekNumber} · Starting {prePopulated.weekStartDate}</p>
         </div>
         <div className="flex gap-2">
           {(['write', 'history'] as const).map(t => (
-            <button key={t} onClick={() => setTab(t)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium capitalize transition-all ${
-                tab === t ? 'bg-white/10 text-white' : 'text-white/40 hover:text-white/60'
+            <button
+              key={t}
+              onClick={() => setTab(t)}
+              className={`px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all ${
+                tab === t ? 'bg-amber-500 text-white' : 'bg-white/5 text-white/40 hover:text-white/70'
               }`}
             >{t}</button>
           ))}
@@ -161,7 +165,7 @@ export default function RetroClient({ entries, prePopulated }: { entries: RetroE
                   value={form[key]}
                   onChange={e => setField(key, e.target.value)}
                   placeholder={placeholder}
-                  rows={4}
+                  rows={3}
                   className="w-full bg-white/5 border border-white/8 rounded-[12px] px-4 py-3 text-sm text-white/90 placeholder-white/20 resize-none focus:outline-none focus:border-amber-500/40 transition-colors"
                 />
               </div>
@@ -170,13 +174,14 @@ export default function RetroClient({ entries, prePopulated }: { entries: RetroE
             <motion.button
               onClick={handleSave}
               disabled={saving}
-              whileTap={{ scale: 0.98 }}
               className={`w-full py-4 rounded-[14px] font-bold text-sm tracking-wide transition-all ${
-                saved ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                : 'bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30'
+                saved
+                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                  : 'bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30'
               } disabled:opacity-50`}
+              whileTap={{ scale: 0.98 }}
             >
-              {saving ? 'Saving...' : saved ? '✓ Retrospective Saved' : 'Save Retrospective'}
+              {saving ? 'Saving...' : saved ? '✓ Retrospective Saved' : 'Commit Retrospective'}
             </motion.button>
           </div>
         </div>
@@ -185,40 +190,74 @@ export default function RetroClient({ entries, prePopulated }: { entries: RetroE
       {tab === 'history' && (
         <div className="space-y-4">
           {entries.length === 0 ? (
-            <div className="text-center py-20 text-white/40">
-              <Calendar className="w-12 h-12 mx-auto mb-4 opacity-30" />
+            <div className="bg-[#101319]/80 rounded-[20px] p-12 text-center text-white/40 border border-white/5">
+              <Calendar className="w-8 h-8 mx-auto mb-3 opacity-30" />
               <p>No retrospectives yet. Complete your first one!</p>
             </div>
           ) : (
-            entries.slice().reverse().map(entry => (
-              <div key={entry.weekStartDate} className="bg-[#101319]/80 rounded-[20px] p-6 border border-white/5">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <span className="font-bold text-white">Week {entry.weekNumber}</span>
-                    <span className="text-white/40 text-sm ml-2">· {entry.weekStartDate}</span>
-                  </div>
-                  <span className={`text-xs px-3 py-1 rounded-full font-medium capitalize ${PACE_STYLES[entry.computed.paceStatus].color} ${PACE_STYLES[entry.computed.paceStatus].bg} border ${PACE_STYLES[entry.computed.paceStatus].border}`}>
-                    {entry.computed.paceStatus}
-                  </span>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                  {[
-                    { l: 'Nodes', v: entry.computed.nodesCompleted },
-                    { l: 'Hours', v: `${entry.computed.hoursStudied}h` },
-                    { l: 'Streak', v: entry.computed.streakMaintained ? '✓' : '✗' },
-                    { l: 'Weak track', v: entry.computed.weakestTrack },
-                  ].map(({ l, v }) => (
-                    <div key={l} className="text-center bg-white/5 rounded-xl p-3">
-                      <p className="text-xs text-white/40 mb-1">{l}</p>
-                      <p className="font-mono font-bold text-white text-sm">{v}</p>
+            <>
+              {entries.slice().reverse().map((entry, idx) => {
+                const isLocked = IS_DEMO && idx >= 2;
+
+                if (isLocked) {
+                  return (
+                    <div key={entry.weekStartDate} className="bg-[#101319]/40 rounded-[20px] p-6 border border-white/5 opacity-50">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-bold text-white/40">Week {entry.weekNumber}</span>
+                        <span className="flex items-center gap-1 text-[11px] font-mono text-amber-500/80 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                          <Lock size={12} /> ARCHIVE LOCKED
+                        </span>
+                      </div>
+                      <p className="text-xs text-white/30 font-mono">
+                        Historical retrospectives and linear regression logs are locked in demo preview.
+                      </p>
                     </div>
-                  ))}
+                  );
+                }
+
+                return (
+                  <div key={entry.weekStartDate} className="bg-[#101319]/80 rounded-[20px] p-6 border border-white/5">
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <span className="font-bold text-white">Week {entry.weekNumber}</span>
+                        <span className="text-white/40 text-sm ml-2">· {entry.weekStartDate}</span>
+                      </div>
+                      <span className={`text-xs px-3 py-1 rounded-full font-medium capitalize ${PACE_STYLES[entry.computed.paceStatus]?.color || 'text-white/60'} ${PACE_STYLES[entry.computed.paceStatus]?.bg || 'bg-white/5'} border ${PACE_STYLES[entry.computed.paceStatus]?.border || 'border-white/10'}`}>
+                        {entry.computed.paceStatus}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                      {[
+                        { l: 'Nodes', v: entry.computed.nodesCompleted },
+                        { l: 'Hours', v: `${entry.computed.hoursStudied}h` },
+                        { l: 'Streak', v: entry.computed.streakMaintained ? '✓' : '✗' },
+                        { l: 'Weak track', v: entry.computed.weakestTrack },
+                      ].map(({ l, v }) => (
+                        <div key={l} className="text-center bg-white/5 rounded-xl p-3">
+                          <p className="text-xs text-white/40 mb-1">{l}</p>
+                          <p className="font-mono font-bold text-white text-sm">{v}</p>
+                        </div>
+                      ))}
+                    </div>
+                    {entry.answers.keyLearning && (
+                      <p className="text-sm text-white/60 italic">"{entry.answers.keyLearning}"</p>
+                    )}
+                  </div>
+                );
+              })}
+
+              {IS_DEMO && (
+                <div className="p-5 text-center rounded-[20px] bg-white/[0.02] border border-white/5 space-y-1">
+                  <div className="flex items-center justify-center gap-1.5 text-xs font-mono text-amber-500/80">
+                    <Lock className="w-3.5 h-3.5" />
+                    <span>ADDITIONAL HISTORICAL RETROSPECTIVES LOCKED</span>
+                  </div>
+                  <p className="text-xs text-white/40">
+                    Full retrospective history and longitudinal pace analysis are active in production.
+                  </p>
                 </div>
-                {entry.answers.keyLearning && (
-                  <p className="text-sm text-white/60 italic">"{entry.answers.keyLearning}"</p>
-                )}
-              </div>
-            ))
+              )}
+            </>
           )}
         </div>
       )}

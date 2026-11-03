@@ -1,6 +1,53 @@
-﻿{
-    "userId":  "demo_user",
-    "entries":  [
-
-                ]
+{
+  "userId": "demo_user",
+  "entries": [
+    {
+      "date": "2026-10-21",
+      "learned": "Mastered Red-Black Tree rotation invariants and balanced insertion recoloring rules.",
+      "blocked": "Re-balancing edge cases on double-black node deletions.",
+      "difficult": "Proving worst-case O(log N) tree height bounds mathematically.",
+      "confidence": 4,
+      "mood": 4,
+      "energy": 4,
+      "focus": 5,
+      "sleepHours": 7.5,
+      "studyHours": 3.5,
+      "journal": "Great morning focus block. Algorithm visualizations make abstract tree mutations crystal clear.",
+      "nodesCompletedToday": ["node-c638ac93ba"],
+      "createdAt": "2026-10-21T18:00:00.000Z",
+      "updatedAt": "2026-10-21T18:00:00.000Z"
+    },
+    {
+      "date": "2026-10-22",
+      "learned": "Engineered lock-free circular ring buffer with memory fence semantics.",
+      "blocked": "Cache line false sharing under high producer concurrency.",
+      "difficult": "Aligning data structures to 64-byte L1 cache boundaries.",
+      "confidence": 5,
+      "mood": 5,
+      "energy": 4,
+      "focus": 5,
+      "sleepHours": 8.0,
+      "studyHours": 4.0,
+      "journal": "Low-level system architecture feels rewarding. Benchmark shows 4.2x throughput increase.",
+      "nodesCompletedToday": ["node-b011561371"],
+      "createdAt": "2026-10-22T18:00:00.000Z",
+      "updatedAt": "2026-10-22T18:00:00.000Z"
+    },
+    {
+      "date": "2026-10-23",
+      "learned": "Designed zero-database Git commit pipeline via GitHub REST Git Database API.",
+      "blocked": "None.",
+      "difficult": "Creating atomic batch tree commits with base tree SHA resolution.",
+      "confidence": 5,
+      "mood": 5,
+      "energy": 5,
+      "focus": 5,
+      "sleepHours": 7.5,
+      "studyHours": 3.0,
+      "journal": "The architecture is clean, reproducible, and has zero external database dependencies.",
+      "nodesCompletedToday": ["node-034f5900d9"],
+      "createdAt": "2026-10-23T18:00:00.000Z",
+      "updatedAt": "2026-10-23T18:00:00.000Z"
+    }
+  ]
 }

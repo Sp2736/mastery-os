@@ -283,7 +283,7 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
               <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 shadow-[0_0_25px_rgba(245,158,11,0.15)]">
                 <Sparkles className="w-4 h-4 text-amber-400" />
                 <span className="font-mono text-xs tracking-widest text-amber-300 uppercase font-medium">
-                  Access Confirmed — Welcome back, Swayam
+                  Access Confirmed — Welcome back, {IS_DEMO ? 'DEMO' : 'Swayam'}
                 </span>
               </div>
 

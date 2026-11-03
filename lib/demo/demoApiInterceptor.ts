@@ -260,3 +260,4 @@ export function installDemoFetchInterceptor() {
     return originalFetch(input, init);
   };
 }
+

@@ -23,10 +23,14 @@ function readJsonFile<T>(relativePath: string): T {
   }
   const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as T;
 
-  // Rewrite the userId field so the client sees demo_user, not swayam
+  // Rewrite the userId and profile fields so the client sees DEMO, not swayam
   if (IS_DEMO && relativePath.startsWith('users/demo_user/')) {
     if (typeof (data as any).userId === 'string') {
       (data as any).userId = 'demo_user';
+    }
+    if (relativePath.includes('profile.json')) {
+      (data as any).displayName = 'DEMO';
+      (data as any).avatarInitials = 'DM';
     }
   }
 

@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, CheckCircle2, Circle, ChevronDown, ChevronRight, Code, Search, Filter, Layers, List } from 'lucide-react';
+import { ExternalLink, CheckCircle2, Circle, ChevronDown, ChevronRight, Code, Search, Filter, Layers, List, Lock, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import type { UserLeetCode, LeetCodeSkill } from '@/lib/storage/readJson';
+import type { UserLeetCode } from '@/lib/storage/readJson';
+
+const IS_DEMO = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
 
 interface LeetcodeClientProps {
   initialData: UserLeetCode;
@@ -13,15 +15,18 @@ interface LeetcodeClientProps {
 export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
   const router = useRouter();
   const [data, setData] = useState(initialData);
-  const [expandedSkills, setExpandedSkills] = useState<Record<string, boolean>>({});
+  const [expandedSkills, setExpandedSkills] = useState<Record<string, boolean>>({
+    'arrays-and-hashing': true,
+  });
 
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'completed' | 'incomplete'>('all');
   const [groupBy, setGroupBy] = useState<'skill' | 'flat'>('skill');
 
-  const toggleProblem = async (skillId: string, problemId: string, currentStatus: boolean) => {
+  const toggleProblem = async (skillId: string, problemId: string, currentStatus: boolean, isLocked?: boolean) => {
+    if (isLocked) return;
     const newStatus = !currentStatus;
-    
+
     // Optimistic update
     setData(prev => ({
       ...prev,
@@ -30,7 +35,7 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
         problems: s.problems.map(p => p.id === problemId ? { ...p, completed: newStatus } : p)
       } : s)
     }));
-    
+
     try {
       const res = await fetch('/api/user/leetcode', {
         method: 'PATCH',
@@ -64,17 +69,30 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
     return { ...skill, problems: filteredProblems, originalTotal: skill.problems.length, originalCompleted: skill.problems.filter(p => p.completed).length };
   }).filter(skill => skill.problems.length > 0 || (searchQuery === '' && statusFilter === 'all'));
 
-  const flatProblems = filteredSkills.flatMap(skill => 
+  const flatProblems = filteredSkills.flatMap(skill =>
     skill.problems.map(p => ({ ...p, skillTitle: skill.title, skillId: skill.id }))
   );
 
   return (
     <div className="space-y-6 max-w-4xl mx-auto pb-20">
-      <div>
-        <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-          <Code className="text-amber-500" /> LeetCode Mastery
-        </h2>
-        <p className="text-white/40 text-sm mt-1">Map your problem-solving progress to core computer science skills.</p>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <div className="flex items-center gap-2">
+            <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+              <Code className="text-amber-500" /> LeetCode Mastery
+            </h2>
+            {IS_DEMO && (
+              <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                <Sparkles className="w-3 h-3" /> DEMO GLIMPSE
+              </span>
+            )}
+          </div>
+          <p className="text-white/40 text-sm mt-1">
+            {IS_DEMO
+              ? "Showing 3 active problem sets. 400+ track problems locked to protect solutions."
+              : "Map your problem-solving progress to core computer science skills."}
+          </p>
+        </div>
       </div>
 
       {/* Control Bar */}
@@ -82,9 +100,9 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
         {/* Search */}
         <div className="relative flex-1">
           <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
-          <input 
-            type="text" 
-            placeholder="Search problems or ID..." 
+          <input
+            type="text"
+            placeholder="Search problems or ID..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-9 pr-4 text-sm text-white focus:outline-none focus:border-amber-500/50 transition-colors"
@@ -95,10 +113,10 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
         <div className="flex gap-4">
           <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-xl border border-white/10">
             <Filter size={14} className="text-white/40" />
-            <select 
+            <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value as any)}
-              className="bg-transparent text-sm text-white/80 focus:outline-none"
+              className="bg-transparent text-sm text-white/80 focus:outline-none cursor-pointer"
             >
               <option value="all" className="bg-[#101319]">All Status</option>
               <option value="completed" className="bg-[#101319]">Completed</option>
@@ -127,17 +145,25 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
 
       <div className="space-y-4">
         {groupBy === 'skill' ? (
-          filteredSkills.map(skill => {
+          filteredSkills.map((skill, sIdx) => {
             const completedCount = skill.originalCompleted;
             const totalCount = skill.originalTotal;
             const progressPercent = totalCount === 0 ? 0 : Math.round((completedCount / totalCount) * 100);
-            
+            const isSkillLocked = IS_DEMO && sIdx >= 3;
+
             // Auto expand if searching/filtering and results are found
             const isExpanded = (searchQuery !== '' || statusFilter !== 'all') ? true : expandedSkills[skill.id];
 
             return (
-              <div key={skill.id} className="bg-[#101319]/80 backdrop-blur-md rounded-[20px] border border-white/5 overflow-hidden">
-                <div 
+              <div
+                key={skill.id}
+                className={`rounded-[20px] border transition-all overflow-hidden ${
+                  isSkillLocked
+                    ? 'bg-[#101319]/40 border-white/5'
+                    : 'bg-[#101319]/80 backdrop-blur-md border-white/5'
+                }`}
+              >
+                <div
                   className="p-5 flex items-center justify-between cursor-pointer hover:bg-white/[0.02] transition-colors"
                   onClick={() => toggleExpand(skill.id)}
                 >
@@ -146,7 +172,16 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
                       {isExpanded ? <ChevronDown size={16} className="text-white/60" /> : <ChevronRight size={16} className="text-white/60" />}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white/90">{skill.title}</h3>
+                      <div className="flex items-center gap-2">
+                        <h3 className={`font-semibold ${isSkillLocked ? 'text-white/50' : 'text-white/90'}`}>
+                          {skill.title}
+                        </h3>
+                        {isSkillLocked && (
+                          <span className="flex items-center gap-1 text-[10px] font-mono text-amber-500/80 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                            <Lock size={10} /> LOCKED
+                          </span>
+                        )}
+                      </div>
                       <div className="flex items-center gap-2 mt-1">
                         <span className="text-[10px] uppercase tracking-wider font-bold text-amber-500/80 bg-amber-500/10 px-2 py-0.5 rounded-full shrink-0">
                           {skill.track}
@@ -155,11 +190,11 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="w-24 sm:w-32 flex flex-col gap-2 shrink-0">
                     <div className="flex justify-end text-xs font-mono text-white/50">{progressPercent}%</div>
                     <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                      <motion.div 
+                      <motion.div
                         className="h-full bg-amber-500"
                         initial={{ width: 0 }}
                         animate={{ width: `${progressPercent}%` }}
@@ -171,50 +206,79 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
 
                 <AnimatePresence>
                   {isExpanded && (
-                    <motion.div 
+                    <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       className="border-t border-white/5"
                     >
                       <div className="p-2 space-y-1">
-                        {skill.problems.map(problem => (
-                          <div 
-                            key={`${skill.id}-${problem.id}`}
-                            className={`flex items-center justify-between p-3 rounded-xl transition-all ${
-                              problem.completed ? 'bg-emerald-500/5 hover:bg-emerald-500/10' : 'hover:bg-white/5'
-                            }`}
-                          >
-                            <div className="flex items-center gap-3 overflow-hidden">
-                              <button 
-                                onClick={(e) => { e.stopPropagation(); toggleProblem(skill.id, problem.id, problem.completed); }}
-                                className="focus:outline-none shrink-0"
-                              >
-                                {problem.completed ? (
-                                  <CheckCircle2 className="text-emerald-500" size={20} />
-                                ) : (
-                                  <Circle className="text-white/20 hover:text-white/40" size={20} />
-                                )}
-                              </button>
-                              <span className={`text-sm font-medium truncate ${problem.completed ? 'text-white/60 line-through' : 'text-white/90'}`}>
-                                {problem.title}
-                              </span>
-                              <span className="text-xs font-mono text-white/30 px-2 bg-white/5 rounded-md border border-white/5 shrink-0">
-                                #{problem.id}
-                              </span>
-                            </div>
-                            
-                            <a 
-                              href={problem.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="p-2 rounded-lg text-white/30 hover:text-white/80 hover:bg-white/10 transition-colors shrink-0"
-                            >
-                              <ExternalLink size={16} />
-                            </a>
+                        {isSkillLocked ? (
+                          <div className="p-4 text-center rounded-xl bg-white/[0.01] border border-white/5 my-2">
+                            <Lock className="w-4 h-4 mx-auto text-amber-500/70 mb-1.5" />
+                            <p className="text-xs text-white/50 font-mono">
+                              Problem set locked in demo preview. Full bank available in private build.
+                            </p>
                           </div>
-                        ))}
-                        {skill.problems.length === 0 && (
+                        ) : (
+                          skill.problems.map((problem, pIdx) => {
+                            const isProblemLocked = IS_DEMO && pIdx >= 3;
+
+                            return (
+                              <div
+                                key={`${skill.id}-${problem.id}`}
+                                className={`flex items-center justify-between p-3 rounded-xl transition-all ${
+                                  isProblemLocked
+                                    ? 'opacity-40 select-none'
+                                    : problem.completed
+                                    ? 'bg-emerald-500/5 hover:bg-emerald-500/10'
+                                    : 'hover:bg-white/5'
+                                }`}
+                              >
+                                <div className="flex items-center gap-3 overflow-hidden">
+                                  <button
+                                    disabled={isProblemLocked}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      toggleProblem(skill.id, problem.id, problem.completed, isProblemLocked);
+                                    }}
+                                    className="focus:outline-none shrink-0"
+                                  >
+                                    {isProblemLocked ? (
+                                      <Lock className="text-white/30" size={16} />
+                                    ) : problem.completed ? (
+                                      <CheckCircle2 className="text-emerald-500" size={20} />
+                                    ) : (
+                                      <Circle className="text-white/20 hover:text-white/40" size={20} />
+                                    )}
+                                  </button>
+                                  <span className={`text-sm font-medium truncate ${problem.completed ? 'text-white/60 line-through' : 'text-white/90'}`}>
+                                    {problem.title}
+                                  </span>
+                                  <span className="text-xs font-mono text-white/30 px-2 bg-white/5 rounded-md border border-white/5 shrink-0">
+                                    #{problem.id}
+                                  </span>
+                                </div>
+
+                                {isProblemLocked ? (
+                                  <span className="text-[11px] font-mono text-white/30 px-2">
+                                    Locked
+                                  </span>
+                                ) : (
+                                  <a
+                                    href={problem.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-2 rounded-lg text-white/30 hover:text-white/80 hover:bg-white/10 transition-colors shrink-0"
+                                  >
+                                    <ExternalLink size={16} />
+                                  </a>
+                                )}
+                              </div>
+                            );
+                          })
+                        )}
+                        {skill.problems.length === 0 && !isSkillLocked && (
                           <div className="p-4 text-center text-sm text-white/40">No matching problems found.</div>
                         )}
                       </div>
@@ -226,45 +290,63 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
           })
         ) : (
           <div className="bg-[#101319]/80 backdrop-blur-md rounded-[20px] border border-white/5 overflow-hidden p-2">
-            {flatProblems.length > 0 ? flatProblems.map(problem => (
-              <div 
-                key={`${problem.skillId}-${problem.id}`}
-                className={`flex items-center justify-between p-3 rounded-xl transition-all mb-1 ${
-                  problem.completed ? 'bg-emerald-500/5 hover:bg-emerald-500/10' : 'hover:bg-white/5'
-                }`}
-              >
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <button 
-                    onClick={(e) => { e.stopPropagation(); toggleProblem(problem.skillId, problem.id, problem.completed); }}
-                    className="focus:outline-none shrink-0"
-                  >
-                    {problem.completed ? (
-                      <CheckCircle2 className="text-emerald-500" size={20} />
-                    ) : (
-                      <Circle className="text-white/20 hover:text-white/40" size={20} />
-                    )}
-                  </button>
-                  <div className="flex flex-col">
-                    <span className={`text-sm font-medium truncate ${problem.completed ? 'text-white/60 line-through' : 'text-white/90'}`}>
-                      {problem.title}
-                    </span>
-                    <span className="text-xs text-white/40 truncate">{problem.skillTitle}</span>
-                  </div>
-                  <span className="text-xs font-mono text-white/30 px-2 bg-white/5 rounded-md border border-white/5 shrink-0 ml-2">
-                    #{problem.id}
-                  </span>
-                </div>
-                
-                <a 
-                  href={problem.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-white/30 hover:text-white/80 hover:bg-white/10 transition-colors shrink-0"
+            {flatProblems.length > 0 ? flatProblems.map((problem, idx) => {
+              const isLocked = IS_DEMO && idx >= 9;
+
+              return (
+                <div
+                  key={`${problem.skillId}-${problem.id}`}
+                  className={`flex items-center justify-between p-3 rounded-xl transition-all mb-1 ${
+                    isLocked
+                      ? 'opacity-40 select-none'
+                      : problem.completed
+                      ? 'bg-emerald-500/5 hover:bg-emerald-500/10'
+                      : 'hover:bg-white/5'
+                  }`}
                 >
-                  <ExternalLink size={16} />
-                </a>
-              </div>
-            )) : (
+                  <div className="flex items-center gap-3 overflow-hidden">
+                    <button
+                      disabled={isLocked}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleProblem(problem.skillId, problem.id, problem.completed, isLocked);
+                      }}
+                      className="focus:outline-none shrink-0"
+                    >
+                      {isLocked ? (
+                        <Lock className="text-white/30" size={16} />
+                      ) : problem.completed ? (
+                        <CheckCircle2 className="text-emerald-500" size={20} />
+                      ) : (
+                        <Circle className="text-white/20 hover:text-white/40" size={20} />
+                      )}
+                    </button>
+                    <div className="flex flex-col">
+                      <span className={`text-sm font-medium truncate ${problem.completed ? 'text-white/60 line-through' : 'text-white/90'}`}>
+                        {problem.title}
+                      </span>
+                      <span className="text-xs text-white/40 truncate">{problem.skillTitle}</span>
+                    </div>
+                    <span className="text-xs font-mono text-white/30 px-2 bg-white/5 rounded-md border border-white/5 shrink-0 ml-2">
+                      #{problem.id}
+                    </span>
+                  </div>
+
+                  {isLocked ? (
+                    <span className="text-[11px] font-mono text-white/30 px-2">Locked</span>
+                  ) : (
+                    <a
+                      href={problem.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg text-white/30 hover:text-white/80 hover:bg-white/10 transition-colors shrink-0"
+                    >
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
+                </div>
+              );
+            }) : (
               <div className="p-8 text-center text-sm text-white/40">No problems found matching your criteria.</div>
             )}
           </div>
@@ -273,4 +355,3 @@ export default function LeetcodeClient({ initialData }: LeetcodeClientProps) {
     </div>
   );
 }
-

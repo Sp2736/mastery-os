@@ -1,6 +1,13 @@
-﻿{
-    "userId":  "demo_user",
-    "unlocked":  [
-
-                 ]
+{
+  "userId": "demo_user",
+  "unlocked": [
+    {
+      "id": "ach-first-day",
+      "unlockedAt": "2026-10-14T10:00:00.000Z"
+    },
+    {
+      "id": "ach-streak-7",
+      "unlockedAt": "2026-10-21T10:00:00.000Z"
+    }
+  ]
 }

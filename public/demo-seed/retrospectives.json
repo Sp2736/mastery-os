@@ -1,6 +1,45 @@
-﻿{
-    "userId":  "demo_user",
-    "entries":  [
-
-                ]
+{
+  "userId": "demo_user",
+  "entries": [
+    {
+      "weekNumber": 1,
+      "weekStartDate": "2026-10-12",
+      "answers": {
+        "wins": "Bootstrapped foundational C++ DSA modules and logged 18 hours of dedicated deep work.",
+        "struggles": "Context switching between web systems and competitive programming.",
+        "keyLearning": "Early morning uninterrupted time slots produce 3x higher retention.",
+        "nextWeekFocus": "Deep dive into dynamic programming memoization vs tabulation."
+      },
+      "computed": {
+        "nodesCompleted": 3,
+        "hoursStudied": 18.5,
+        "streakMaintained": true,
+        "weakestTrack": "DSA/CP",
+        "paceStatus": "on-track",
+        "predictedFinish6Month": "2027-04-15",
+        "predictedFinishWebDev": "2026-12-08"
+      },
+      "createdAt": "2026-10-18T20:00:00.000Z"
+    },
+    {
+      "weekNumber": 2,
+      "weekStartDate": "2026-10-19",
+      "answers": {
+        "wins": "Completed graph traversal implementations (BFS, DFS, Dijkstra) with zero rollover tasks.",
+        "struggles": "Sleep deficit mid-week impacted Friday problem-solving efficiency.",
+        "keyLearning": "Sleep duration strongly correlates with daily problem confidence.",
+        "nextWeekFocus": "Architect flat JSON Git persistence pipeline and publish architecture docs."
+      },
+      "computed": {
+        "nodesCompleted": 4,
+        "hoursStudied": 21.0,
+        "streakMaintained": true,
+        "weakestTrack": "Web Dev",
+        "paceStatus": "ahead",
+        "predictedFinish6Month": "2027-04-02",
+        "predictedFinishWebDev": "2026-12-01"
+      },
+      "createdAt": "2026-10-25T20:00:00.000Z"
+    }
+  ]
 }

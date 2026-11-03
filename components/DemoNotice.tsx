@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FlaskConical,
@@ -17,6 +18,8 @@ import {
   Network,
   BookOpen,
   Code,
+  GitBranch,
+  ArrowRight,
 } from 'lucide-react';
 
 const FEATURES = [
@@ -26,8 +29,9 @@ const FEATURES = [
   { icon: RotateCcw,       label: 'Retrospective', desc: 'Weekly reflection with pace predictions' },
   { icon: BarChart2,       label: 'Analytics', desc: 'Heat maps, correlations & study trend analysis' },
   { icon: Network,         label: 'Knowledge Graph', desc: 'Visual dependency graph of all learning nodes' },
-  { icon: BookOpen,        label: 'Resources', desc: 'Curated bookmarks, ratings & revisit scheduling' },
+  { icon: BookOpen,        label: 'Resources', desc: 'Curated bookmarks, ratings & preview locks' },
   { icon: Code,            label: 'LeetCode Tracker', desc: 'Skill-grouped problem completion with XP rewards' },
+  { icon: GitBranch,       label: 'Architecture', desc: 'Deep dive into GitHub REST atomic commit pipeline' },
 ];
 
 const SESSION_KEY = 'mastery-demo-notice-dismissed';
@@ -72,7 +76,7 @@ export default function DemoNotice() {
                 </span>
                 <span className="text-white/30 text-xs mx-1">·</span>
                 <span className="text-white/50 text-xs truncate">
-                  Logged in as <span className="text-white/70 font-medium">Guest</span> — data resets on tab close
+                  Logged in as <span className="text-amber-400 font-mono font-bold">DEMO</span> — data resets on tab close
                 </span>
               </div>
 
@@ -114,11 +118,11 @@ export default function DemoNotice() {
                     {/* Welcome copy */}
                     <div>
                       <h2 className="text-white/90 font-semibold text-sm mb-1">
-                        Welcome to Mastery OS — Portfolio Demo
+                        Welcome to the Mastery OS Demo
                       </h2>
                       <p className="text-white/45 text-xs leading-relaxed">
-                        This is a live, fully interactive preview of Mastery OS. You are browsing
-                        as a guest so you can explore every feature without credentials.
+                        This is an interactive portfolio preview. Modules display 2–3 active glimpses
+                        while full collections remain protected.
                       </p>
                     </div>
 
@@ -130,8 +134,7 @@ export default function DemoNotice() {
                         <div>
                           <p className="text-white/80 text-xs font-medium mb-0.5">Authentication Bypass</p>
                           <p className="text-white/40 text-[11px] leading-relaxed">
-                            You are auto-logged in as <strong className="text-white/60">Demo User</strong>.
-                            The normal console-based identity gate is skipped in this build.
+                            You are logged in as guest <strong className="text-amber-400 font-mono">DEMO</strong> to explore the platform seamlessly without requiring console authentication.
                           </p>
                         </div>
                       </div>
@@ -142,19 +145,33 @@ export default function DemoNotice() {
                         <div>
                           <p className="text-white/80 text-xs font-medium mb-0.5">Local Data Simulation</p>
                           <p className="text-white/40 text-[11px] leading-relaxed">
-                            In production, Mastery OS commits JSON updates directly to a private GitHub
-                            repo. Here, all writes are intercepted and stored in <strong className="text-white/60">browser sessionStorage</strong> — nothing leaves your browser.
+                            In production, this app persists user data by programmatically committing JSON updates directly to a private GitHub repository. For this demo, that methodology is replaced with local browser <strong className="text-white/60">sessionStorage</strong>. Your data will reset upon closing the tab.
                           </p>
                         </div>
                       </div>
                     </div>
+
+                    {/* Blog / Architecture Deep Dive CTA */}
+                    <Link
+                      href="/architecture"
+                      onClick={() => setExpanded(false)}
+                      className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/20 hover:border-amber-500/40 text-amber-300 text-xs font-medium group transition-all"
+                    >
+                      <div className="flex items-center gap-2">
+                        <GitBranch className="w-4 h-4 text-amber-400 shrink-0" />
+                        <span>Read Architecture Blog: How Git Commits Replace Databases</span>
+                      </div>
+                      <span className="flex items-center gap-1 font-mono text-[11px] text-amber-400 group-hover:translate-x-1 transition-transform">
+                        Explore <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </Link>
 
                     {/* Feature list */}
                     <div>
                       <p className="text-white/40 text-[11px] uppercase tracking-widest font-mono mb-2">
                         Features to explore
                       </p>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                         {FEATURES.map(({ icon: Icon, label, desc }) => (
                           <div
                             key={label}
@@ -163,7 +180,7 @@ export default function DemoNotice() {
                               px-2.5 py-2 hover:bg-white/5 transition-colors cursor-default"
                           >
                             <Icon className="w-3.5 h-3.5 text-amber-400/70 shrink-0" />
-                            <span className="text-white/55 text-[11px] font-medium truncate">{label}</span>
+                            <span className="text-white/65 text-[11px] font-medium truncate">{label}</span>
                           </div>
                         ))}
                       </div>
