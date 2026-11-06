@@ -372,7 +372,8 @@
           "id": "283",
           "title": "Move Zeroes",
           "url": "https://leetcode.com/problems/move-zeroes/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-06T14:27:03.974Z"
         },
         {
           "id": "977",
