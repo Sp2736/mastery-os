@@ -379,7 +379,8 @@
           "id": "977",
           "title": "Squares of a Sorted Array",
           "url": "https://leetcode.com/problems/squares-of-a-sorted-array/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-06T14:44:43.785Z"
         },
         {
           "id": "1089",
