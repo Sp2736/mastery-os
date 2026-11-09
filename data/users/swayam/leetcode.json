@@ -234,7 +234,8 @@
           "id": "189",
           "title": "Rotate Array",
           "url": "https://leetcode.com/problems/rotate-array/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-09T17:56:50.728Z"
         },
         {
           "id": "31",
