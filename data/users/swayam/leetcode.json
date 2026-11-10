@@ -429,7 +429,8 @@
           "id": "344",
           "title": "Reverse String",
           "url": "https://leetcode.com/problems/reverse-string/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-10T13:25:01.530Z"
         },
         {
           "id": "2000",
