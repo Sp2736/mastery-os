@@ -253,7 +253,8 @@
           "id": "73",
           "title": "Set Matrix Zeroes",
           "url": "https://leetcode.com/problems/set-matrix-zeroes/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-11T07:03:14.039Z"
         },
         {
           "id": "48",
