@@ -823,7 +823,8 @@
           "id": "20",
           "title": "Valid Parentheses",
           "url": "https://leetcode.com/problems/valid-parentheses/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-11T07:15:53.725Z"
         },
         {
           "id": "682",
