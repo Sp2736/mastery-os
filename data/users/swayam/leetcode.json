@@ -837,7 +837,8 @@
           "id": "1047",
           "title": "Remove All Adjacent Duplicates In String",
           "url": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-12T10:19:49.601Z"
         },
         {
           "id": "1441",
