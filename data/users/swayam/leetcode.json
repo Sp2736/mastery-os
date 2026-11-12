@@ -830,7 +830,8 @@
           "id": "682",
           "title": "Baseball Game",
           "url": "https://leetcode.com/problems/baseball-game/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-12T09:56:10.573Z"
         },
         {
           "id": "1047",
