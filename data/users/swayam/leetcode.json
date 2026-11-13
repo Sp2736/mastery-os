@@ -844,7 +844,8 @@
           "id": "1441",
           "title": "Build an Array With Stack Operations",
           "url": "https://leetcode.com/problems/build-an-array-with-stack-operations/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-13T09:18:53.446Z"
         },
         {
           "id": "155",
