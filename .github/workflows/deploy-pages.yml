@@ -3,7 +3,7 @@ name: Deploy Demo to GitHub Pages
 on:
   push:
     branches:
-      - demo
+      - gh-pages
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
