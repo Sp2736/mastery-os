@@ -634,7 +634,8 @@
           "id": "205",
           "title": "Isomorphic Strings",
           "url": "https://leetcode.com/problems/isomorphic-strings/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-14T18:05:30.361Z"
         },
         {
           "id": "383",
