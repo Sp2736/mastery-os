@@ -641,7 +641,8 @@
           "id": "383",
           "title": "Ransom Note",
           "url": "https://leetcode.com/problems/ransom-note/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-14T18:54:04.482Z"
         },
         {
           "id": "415",
