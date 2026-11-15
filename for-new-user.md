@@ -9,7 +9,6 @@ What to do in case of another user? They would want the commits to their profile
    To enforce security, Mastery OS strictly validates the `userId`. You will need to add your lowercase username (e.g., `johndoe`) to the allowlist in the following files:
    - `lib/storage/readJson.ts` (in the `validateUserId` function)
    - `lib/storage/writeJson.ts` (in the `writeUserJson` function)
-   - `components/AccessGate.tsx` (in the `window.getAccess` event listener)
    - `app/api/auth/session/route.ts` (in the `z.enum([...])` validation array)
 
 3. **Initialize Your Data Directory**
@@ -26,7 +25,8 @@ What to do in case of another user? They would want the commits to their profile
    - `GITHUB_TOKEN`: Your newly generated fine-grained PAT.
    - `GITHUB_OWNER`: Your GitHub username.
    - `GITHUB_REPO`: The name of your forked repository (e.g., `mastery-os`).
-   - `SESSION_SECRET`: A secure random string used to sign your session cookie.
+   - `SESSION_SECRET`: A random string of at least 32 characters, used to sign your session cookie. The app refuses to start sessions without it.
+   - `OWNER_ACCESS_KEY`: A long random secret (16+ characters) that only you know. Sessions are only issued to someone who presents it. Never commit it.
 
 6. **Deploy the Application**
    Deploy your application to production (Vercel). Make sure `NODE_ENV` is set to `production` so that file writes trigger GitHub API commits instead of local filesystem writes.
@@ -34,6 +34,6 @@ What to do in case of another user? They would want the commits to their profile
 7. **Log In and Start Committing**
    - Open your deployed application. You will see an "Access Denied" shield.
    - Open your browser's Developer Tools (F12) and go to the Console.
-   - Type `window.getAccess('your_username')` and hit Enter to authenticate.
+   - Type `window.getAccess('your_username', 'your_owner_access_key')` and hit Enter to authenticate.
    
 Now, every time you complete a task, milestone, or journal entry, Mastery OS will use the GitHub REST API to securely commit the updated JSON file directly to your repository, creating a beautiful green contribution graph on your GitHub profile!

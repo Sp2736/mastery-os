@@ -52,10 +52,10 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
 
   useEffect(() => {
     // Expose the global function to the window object
-    (window as any).getAccess = async (userId: string) => {
+    (window as any).getAccess = async (userId: string, accessKey: string) => {
       const sanitized = userId?.toLowerCase().trim();
-      if (sanitized !== 'swayam') {
-        console.error(`ACCESS DENIED — unrecognized identity: '${userId}'`);
+      if (!sanitized || !accessKey) {
+        console.error('ACCESS DENIED');
         return;
       }
       
@@ -65,7 +65,7 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
         const res = await fetch('/api/auth/session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: sanitized }),
+          body: JSON.stringify({ userId: sanitized, accessKey }),
         });
         
         if (res.ok) {
