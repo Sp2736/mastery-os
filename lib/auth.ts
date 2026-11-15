@@ -1,7 +1,6 @@
 import { jwtVerify, SignJWT } from 'jose';
 import { cookies } from 'next/headers';
-
-const SECRET = new TextEncoder().encode(process.env.SESSION_SECRET || 'fallback-secret-for-dev-only-please-change-it');
+import { getSessionSecret } from '@/lib/secret';
 
 export interface SessionPayload {
   userId: string;
@@ -21,7 +20,7 @@ export async function createSession(userId: string) {
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
     .setExpirationTime('7d')
-    .sign(SECRET);
+    .sign(getSessionSecret());
 
   const cookieStore = await cookies();
   cookieStore.set('mastery_session', session, {
@@ -45,7 +44,7 @@ export async function verifySession(): Promise<SessionPayload | null> {
   }
 
   try {
-    const { payload } = await jwtVerify(session, SECRET);
+    const { payload } = await jwtVerify(session, getSessionSecret());
     return payload as unknown as SessionPayload;
   } catch (error) {
     console.error('Failed to verify session:', error);

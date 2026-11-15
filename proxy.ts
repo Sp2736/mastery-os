@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { jwtVerify } from 'jose';
-
-const SECRET = new TextEncoder().encode(process.env.SESSION_SECRET || 'fallback-secret-for-dev-only-please-change-it');
+import { getSessionSecret } from '@/lib/secret';
 
 // In demo mode all requests are allowed through — session verification is
 // handled at the server-component level in app/(app)/layout.tsx via lib/auth.ts
@@ -46,7 +45,7 @@ export async function proxy(req: NextRequest) {
   }
 
   try {
-    const { payload } = await jwtVerify(session, SECRET);
+    const { payload } = await jwtVerify(session, getSessionSecret());
 
     const requestHeaders = new Headers(req.headers);
     requestHeaders.set('x-user-id', payload.userId as string);
