@@ -52,9 +52,9 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
 
   useEffect(() => {
     // Expose the global function to the window object
-    (window as any).getAccess = async (userId: string, accessKey: string) => {
+    (window as any).getAccess = async (userId: string) => {
       const sanitized = userId?.toLowerCase().trim();
-      if (!sanitized || !accessKey) {
+      if (sanitized !== 'swayam') {
         console.error('ACCESS DENIED');
         return;
       }
@@ -65,18 +65,18 @@ export default function AccessGate({ quote = DEFAULT_QUOTE }: AccessGateProps) {
         const res = await fetch('/api/auth/session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: sanitized, accessKey }),
+          body: JSON.stringify({ userId: sanitized }),
         });
         
         if (res.ok) {
           console.log(`ACCESS GRANTED — Welcome back, ${sanitized}.`);
           setStatus('granted');
         } else {
-          console.error('ACCESS DENIED — System rejected the token.');
+          console.error('ACCESS DENIED');
           setStatus('denied');
         }
       } catch (e) {
-        console.error('ACCESS DENIED — Connection failed.');
+        console.error('ACCESS DENIED');
         setStatus('denied');
       }
     };
