@@ -878,7 +878,8 @@
           "id": "394",
           "title": "Decode String",
           "url": "https://leetcode.com/problems/decode-string/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-16T16:49:34.349Z"
         },
         {
           "id": "71",
