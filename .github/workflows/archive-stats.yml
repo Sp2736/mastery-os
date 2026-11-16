@@ -32,7 +32,7 @@ jobs:
 
       - name: Refresh archive stats
         env:
-          GH_TOKEN: ${{ vars.PROFILE_TOKEN || secrets.PROFILE_TOKEN || github.token }}
+          GH_TOKEN: ${{ secrets.PROFILE_TOKEN || github.token }}
           GH_REPO:  ${{ github.repository }}
         run: python scripts/archive_stats.py
         continue-on-error: true
@@ -49,9 +49,9 @@ jobs:
 
       # ── optional: tell the profile repo a new release dropped ──
       - name: Notify profile repo
-        if: github.event_name == 'release' && (vars.PROFILE_TOKEN != '' || secrets.PROFILE_TOKEN != '')
+        if: github.event_name == 'release'
         env:
-          PROFILE_TOKEN: ${{ vars.PROFILE_TOKEN || secrets.PROFILE_TOKEN }}
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
         run: |
           curl -s -X POST \
             -H "Accept: application/vnd.github+json" \
