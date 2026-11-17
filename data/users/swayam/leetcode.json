@@ -872,7 +872,8 @@
           "id": "844",
           "title": "Backspace String Compare",
           "url": "https://leetcode.com/problems/backspace-string-compare/",
-          "completed": false
+          "completed": true,
+          "completedAt": "2026-11-17T16:16:43.477Z"
         },
         {
           "id": "394",
